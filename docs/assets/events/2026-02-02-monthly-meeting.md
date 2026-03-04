@@ -3,7 +3,7 @@
 <h1>February Meeting 2026-02-02</h1>
 
 <div class="event-detail">
-<span class="event-detail-label">🕐 Time:</span> 4:00 PM - 5:00 PM CST
+<span class="event-detail-label">🕐 Time:</span> February 2nd, 2026 · 4:00 PM - 5:00 PM CST
 </div>
 
 <div class="event-detail">

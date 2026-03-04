@@ -1,13 +1,36 @@
-{#-
-  This file was automatically generated - do not edit
--#}
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  {%- for page in pages -%}
-    {%- if page.canonical_url %}
       <url>
-        <loc>{{ page.canonical_url }}</loc>
+        <loc>https://andrewsuggs465.github.io/</loc>
       </url>
-    {%- endif -%}
-  {%- endfor %}
+      <url>
+        <loc>https://andrewsuggs465.github.io/join/</loc>
+      </url>
+      <url>
+        <loc>https://andrewsuggs465.github.io/events/</loc>
+      </url>
+      <url>
+        <loc>https://andrewsuggs465.github.io/assets/events/2026-03-16-workshop/</loc>
+      </url>
+      <url>
+        <loc>https://andrewsuggs465.github.io/assets/events/2026-04-07-monthly-meeting/</loc>
+      </url>
+      <url>
+        <loc>https://andrewsuggs465.github.io/assets/events/2026-03-02-monthly-meeting/</loc>
+      </url>
+      <url>
+        <loc>https://andrewsuggs465.github.io/assets/events/2026-02-02-monthly-meeting/</loc>
+      </url>
+      <url>
+        <loc>https://andrewsuggs465.github.io/starting-guide/</loc>
+      </url>
+      <url>
+        <loc>https://andrewsuggs465.github.io/boards/</loc>
+      </url>
+      <url>
+        <loc>https://andrewsuggs465.github.io/projects/</loc>
+      </url>
+      <url>
+        <loc>https://andrewsuggs465.github.io/resources/</loc>
+      </url>
 </urlset>

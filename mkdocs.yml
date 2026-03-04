@@ -43,8 +43,10 @@ nav:
   - Events: 
     - Calendar: events.md
     - Meetings:
-      - 2026-03-02 — Monthly Meeting: assets/events/2026-03-02-monthly-meeting.md
+      - 2026-03-16 — Workshop: assets/events/2026-03-16-workshop.md
+      - 2026-04-07 — Monthly Meeting: assets/events/2026-04-07-monthly-meeting.md
     - Previous:
+        - 2026-03-02 — Monthly Meeting: assets/events/2026-03-02-monthly-meeting.md
         - 2026-02-02 — Monthly Meeting: assets/events/2026-02-02-monthly-meeting.md
   - Starting Guide: starting-guide.md
   - Boards: boards.md
