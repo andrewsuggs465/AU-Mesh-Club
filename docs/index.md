@@ -131,16 +131,3 @@ We are an interdisciplinary student organization dedicated to bringing mesh netw
 </div>
 
 </div>
-
-<div class="section">
-
-<h1>Our Outreach Plans</h1>
-
-<ul>
-<li><strong>Haley Concourse & E-Day Tabling</strong> - Showcase our projects and recruit new members</li>
-<li><strong>Public Demonstrations</strong> - Demos in Auburn and Opelika communities</li>
-<li><strong>Intro Workshops</strong> - Educational sessions on radio and mesh networking fundamentals</li>
-<li><strong>Regional Network</strong> - Build a community-supported mesh that anyone can learn from</li>
-</ul>
-
-</div>

@@ -41,7 +41,6 @@ nav:
   - Home: index.md
   - Join: join.md
   - Events: 
-    - Calendar: events.md
     - Meetings:
       - 2026-03-16 — Workshop: assets/events/2026-03-16-workshop.md
       - 2026-04-07 — Monthly Meeting: assets/events/2026-04-06-monthly-meeting.md

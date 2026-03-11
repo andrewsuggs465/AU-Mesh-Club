@@ -1,9 +1,5 @@
 # Join Us
 
-## How to Get Involved
-
-You can be as casual or involved as you want.
-
 <div class="action-cards">
 <div class="action-card">
 <span class="action-card-icon">💬</span>
@@ -34,38 +30,3 @@ You can be as casual or involved as you want.
 </div>
 </div>
 
-## Community Events
-
-Not an AU student? No problem—we welcome everyone!
-
-### Upcoming & Planned Events
-
-<div class="action-cards">
-<div class="action-card">
-<span class="action-card-icon">🔧</span>
-<h3>Build Nights</h3>
-<p>Hands-on sessions to create and tinker with Meshtastic nodes</p>
-<a href="#calendar">View Calendar</a>
-</div>
-
-<div class="action-card">
-<span class="action-card-icon">📡</span>
-<h3>Public Demos</h3>
-<p>See Meshtastic in action and learn how it works</p>
-<a href="#calendar">View Calendar</a>
-</div>
-
-<div class="action-card">
-<span class="action-card-icon">📚</span>
-<h3>Intro Workshops</h3>
-<p>Learn the basics of RF, networks, and open-source</p>
-<a href="#calendar">View Calendar</a>
-</div>
-
-<div class="action-card">
-<span class="action-card-icon">🌐</span>
-<h3>Community Projects</h3>
-<p>Collaborate on larger initiatives with other makers</p>
-<a href="/projects/">See Projects</a>
-</div>
-</div>
