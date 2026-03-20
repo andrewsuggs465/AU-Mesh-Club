@@ -20,3 +20,11 @@ Join us for a monthly meeting!
 </div>
 
 # Meeting Agenda
+
+## Club updates
+We are now officially a Sponsored Student Organization (SSO). This means the College of Engineering, specifically the ECE department has funded our club and allowed us to be affiliated with the Auburn University brand.
+
+Meshtastic radio orders will be placed soon and a build date will be set in place.
+
+## Lesson
+Andrew will cover encryption standards and the importance of self-reliant networks. This lesson will cover not only technical details but also a high-level ethical view of its significance.

@@ -31,4 +31,4 @@ Lilygo T-Beam Meshtastic
 | Includes GPS | No | Yes (external module) | Yes |
 | WiFi | No | Yes | Yes |
 | Screen | 0.96in OLED | 0.96in OLED | 0.96 OLED |
-| Est. Battery Life (3000mAh) | ~278 hrs (11 days) | ~10.7 hrs | ~18.75 hrs *Note nust use (one) 18650 cell* |
+| Est. Battery Life (3000mAh) | ~278 hrs (11 days) | ~10.7 hrs | ~18.75 hrs *Note must use (one) 18650 cell* |
