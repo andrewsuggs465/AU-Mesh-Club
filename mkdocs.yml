@@ -15,6 +15,7 @@ theme:
     - navigation.instant
     - navigation.tabs
     - navigation.sections
+    - navigation.expand
     - navigation.top
     - search.highlight
     - content.code.copy
@@ -40,15 +41,24 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Join: join.md
+  - Documentation:
+    - Overview: starting-guide.md
+    - Intro & Overview: documentation/intro.md
+    - Meshtastic Protocol: documentation/protocol.md
+    - Microcontrollers & Modems: documentation/microcontrollers.md
+    - Popular Build Options: documentation/build-options.md
+    - Antennas, LoRa & RF: documentation/antennas-rf.md
+    - Assembly Guide: documentation/assembly.md
+    - Installation: documentation/installation.md
+    - App Overview: documentation/app-overview.md
   - Events: 
     - Meetings:
+      - 2026-04-01 — ADCS Privacy Talk: assets/events/2026-04-01-privacy-talk.md
       - 2026-04-07 — Monthly Meeting: assets/events/2026-04-06-monthly-meeting.md
     - Previous:
         - 2026-03-16 — Workshop: assets/events/2026-03-16-workshop.md
         - 2026-03-02 — Monthly Meeting: assets/events/2026-03-02-monthly-meeting.md
         - 2026-02-02 — Monthly Meeting: assets/events/2026-02-02-monthly-meeting.md
-  - Starting Guide: starting-guide.md
-  - Boards: boards.md
   - Project Hub: projects.md
   - Resources: resources.md
   - Uploads: https://auburn.box.com/s/d4jgsr0w9i4rygxcakc5eockw36nfeiw

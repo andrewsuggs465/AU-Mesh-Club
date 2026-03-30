@@ -1,0 +1,2360 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Student-led Meshtastic, LoRa, and mesh networking at Auburn University">
+      
+      
+      
+        <link rel="canonical" href="https://andrewsuggs465.github.io/documentation/microcontrollers/">
+      
+      
+        <link rel="prev" href="../protocol/">
+      
+      
+        <link rel="next" href="../build-options/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/logos/SVG_au.svg">
+      <meta name="generator" content="zensical-0.0.24">
+    
+    
+      
+        <title>Microcontrollers and Modems - Auburn University Meshtastic</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../../assets/stylesheets/modern/main.28978c9b.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/modern/palette.dfe2e883.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Outfit:300,300i,400,400i,500,500i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Outfit";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/styles/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,a=__md_scope)=>JSON.parse(t.getItem(a.pathname+"."+e)),__md_set=(e,t,a=localStorage,_=__md_scope)=>{try{a.setItem(_.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#microcontrollers-and-modems" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Auburn University Meshtastic" class="md-header__button md-logo" aria-label="Auburn University Meshtastic" data-md-component="logo">
+      
+  <img src="../../assets/logos/SVG_au.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Auburn University Meshtastic
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Microcontrollers and Modems
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="none" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Search">
+  <button type="button" class="md-search__button">
+    Search
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+        <a href="https://github.com/andrewsuggs465/AU-Meshtastic" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    andrewsuggs465/AU-Meshtastic
+  </div>
+</a>
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../join/" class="md-tabs__link">
+        
+  
+  Join
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../starting-guide/" class="md-tabs__link">
+          
+  
+  Documentation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../assets/events/2026-04-01-privacy-talk/" class="md-tabs__link">
+          
+  
+  Events
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../projects/" class="md-tabs__link">
+        
+  
+  Project Hub
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../resources/" class="md-tabs__link">
+        
+  
+  Resources
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://auburn.box.com/s/d4jgsr0w9i4rygxcakc5eockw36nfeiw" class="md-tabs__link">
+        
+  
+  Uploads
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Auburn University Meshtastic" class="md-nav__button md-logo" aria-label="Auburn University Meshtastic" data-md-component="logo">
+      
+  <img src="../../assets/logos/SVG_au.svg" alt="logo">
+
+    </a>
+    Auburn University Meshtastic
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/andrewsuggs465/AU-Meshtastic" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    andrewsuggs465/AU-Meshtastic
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../join/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Join
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Documentation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../starting-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Intro & Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Meshtastic Protocol
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Microcontrollers & Modems
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Microcontrollers & Modems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#microcontrollers-mcus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Microcontrollers (MCUs)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Microcontrollers (MCUs)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-esp32-esp32-s3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. ESP32 / ESP32-S3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-nrf52840" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. nRF52840
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-stm32wl-stm32wb-arm-cortex-m4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. STM32WL / STM32WB (ARM Cortex-M4)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-arm-linux-soc-eg-raspberry-pi-cm4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. ARM + Linux SoC (e.g. Raspberry Pi / CM4)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lora-modems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LoRa Modems
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LoRa Modems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-sx1262-sx1268-gen-2-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. SX1262 / SX1268 — Gen 2 (Recommended)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-sx1276-sx1278-gen-1-legacy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. SX1276 / SX1278 — Gen 1 (Legacy)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-sx1280-gen-2-24-ghz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. SX1280 — Gen 2 (2.4 GHz)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-lr1110-lr1120-lr1121-gen-3-multi-band-geolocation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. LR1110 / LR1120 / LR1121 — Gen 3 (Multi-band + Geolocation)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-stm32wle5-integrated-radio-gen-2-soc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. STM32WLE5 Integrated Radio — Gen 2 (SoC)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary Tables
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Summary Tables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mcus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MCUs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lora-modems_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LoRa Modems
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LoRa Modems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pre-built-nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pre-Built Nodes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../build-options/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Popular Build Options
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../antennas-rf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Antennas, LoRa & RF
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../assembly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assembly Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../app-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    App Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Events
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Events
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Meetings
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Meetings
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../assets/events/2026-04-01-privacy-talk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2026-04-01 — ADCS Privacy Talk
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../assets/events/2026-04-06-monthly-meeting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2026-04-07 — Monthly Meeting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Previous
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Previous
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../assets/events/2026-03-16-workshop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2026-03-16 — Workshop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../assets/events/2026-03-02-monthly-meeting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2026-03-02 — Monthly Meeting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../assets/events/2026-02-02-monthly-meeting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2026-02-02 — Monthly Meeting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Hub
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://auburn.box.com/s/d4jgsr0w9i4rygxcakc5eockw36nfeiw" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Uploads
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#microcontrollers-mcus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Microcontrollers (MCUs)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Microcontrollers (MCUs)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-esp32-esp32-s3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. ESP32 / ESP32-S3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-nrf52840" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. nRF52840
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-stm32wl-stm32wb-arm-cortex-m4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. STM32WL / STM32WB (ARM Cortex-M4)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-arm-linux-soc-eg-raspberry-pi-cm4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. ARM + Linux SoC (e.g. Raspberry Pi / CM4)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lora-modems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LoRa Modems
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LoRa Modems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-sx1262-sx1268-gen-2-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. SX1262 / SX1268 — Gen 2 (Recommended)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-sx1276-sx1278-gen-1-legacy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. SX1276 / SX1278 — Gen 1 (Legacy)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-sx1280-gen-2-24-ghz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. SX1280 — Gen 2 (2.4 GHz)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-lr1110-lr1120-lr1121-gen-3-multi-band-geolocation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. LR1110 / LR1120 / LR1121 — Gen 3 (Multi-band + Geolocation)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-stm32wle5-integrated-radio-gen-2-soc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. STM32WLE5 Integrated Radio — Gen 2 (SoC)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary Tables
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Summary Tables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mcus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MCUs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lora-modems_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LoRa Modems
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LoRa Modems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pre-built-nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pre-Built Nodes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+  
+  
+
+
+<h1 id="microcontrollers-and-modems">Microcontrollers and Modems</h1>
+<h2 id="microcontrollers-mcus">Microcontrollers (MCUs)</h2>
+<h3 id="1-esp32-esp32-s3">1. ESP32 / ESP32-S3</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Architecture</strong></td>
+<td>Xtensa LX6 dual-core @ 240 MHz (ESP32); LX7 dual-core @ 240 MHz (S3)</td>
+</tr>
+<tr>
+<td><strong>RAM</strong></td>
+<td>520 KB SRAM (ESP32); 512 KB + optional PSRAM (S3)</td>
+</tr>
+<tr>
+<td><strong>Flash</strong></td>
+<td>External, typically 4–16 MB</td>
+</tr>
+<tr>
+<td><strong>Wi-Fi</strong></td>
+<td>802.11 b/g/n 2.4 GHz — yes on both</td>
+</tr>
+<tr>
+<td><strong>Bluetooth</strong></td>
+<td>BT Classic + BLE 4.2 (ESP32); BLE 5.0 (S3)</td>
+</tr>
+<tr>
+<td><strong>GPIO</strong></td>
+<td>34 pins (ESP32); 45 pins (S3)</td>
+</tr>
+<tr>
+<td><strong>ADC/DAC</strong></td>
+<td>18× ADC, 2× DAC (ESP32); 20× ADC (S3)</td>
+</tr>
+<tr>
+<td><strong>USB</strong></td>
+<td>Requires CP2102/CH340 bridge (ESP32); native USB on S3</td>
+</tr>
+<tr>
+<td><strong>Sleep Current</strong></td>
+<td>~10 µA deep sleep; ~40–80 mA typical active RX</td>
+</tr>
+<tr>
+<td><strong>Operating Voltage</strong></td>
+<td>3.0–3.6 V</td>
+</tr>
+<tr>
+<td><strong>Price Range</strong></td>
+<td>Low (~$2–$8 module)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Notes:</strong> Most widely used MCU in Meshtastic hardware. Wi-Fi enables MQTT bridging and web UI, but significantly higher power draw than nRF52840 makes it unsuitable for solar or long-term battery nodes. No native USB on classic ESP32.</p>
+<hr />
+<h3 id="2-nrf52840">2. nRF52840</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Architecture</strong></td>
+<td>ARM Cortex-M4F @ 64 MHz</td>
+</tr>
+<tr>
+<td><strong>RAM</strong></td>
+<td>256 KB SRAM</td>
+</tr>
+<tr>
+<td><strong>Flash</strong></td>
+<td>1 MB internal</td>
+</tr>
+<tr>
+<td><strong>Wi-Fi</strong></td>
+<td>None</td>
+</tr>
+<tr>
+<td><strong>Bluetooth</strong></td>
+<td>BLE 5.0 + Bluetooth Mesh + NFC</td>
+</tr>
+<tr>
+<td><strong>GPIO</strong></td>
+<td>48 pins</td>
+</tr>
+<tr>
+<td><strong>ADC</strong></td>
+<td>8× 12-bit SAR ADC</td>
+</tr>
+<tr>
+<td><strong>USB</strong></td>
+<td>Native USB 2.0 Full Speed</td>
+</tr>
+<tr>
+<td><strong>Sleep Current</strong></td>
+<td>~2 µA deep sleep; as low as ~11 µA in typical Meshtastic standby</td>
+</tr>
+<tr>
+<td><strong>Operating Voltage</strong></td>
+<td>1.7–5.5 V</td>
+</tr>
+<tr>
+<td><strong>Price Range</strong></td>
+<td>Mid (~$10–$20 module)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Notes:</strong> Best-in-class power efficiency — Meshtastic strongly recommends it for solar and handheld applications. Native USB with UF2 drag-and-drop flashing. No Wi-Fi means no web UI without external hardware.</p>
+<hr />
+<h3 id="3-stm32wl-stm32wb-arm-cortex-m4">3. STM32WL / STM32WB (ARM Cortex-M4)</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Architecture</strong></td>
+<td>ARM Cortex-M4 @ 48 MHz + Cortex-M0+ radio coprocessor (WL); dual Cortex-M4 (WB)</td>
+</tr>
+<tr>
+<td><strong>RAM</strong></td>
+<td>64–256 KB SRAM</td>
+</tr>
+<tr>
+<td><strong>Flash</strong></td>
+<td>256 KB – 1 MB internal</td>
+</tr>
+<tr>
+<td><strong>Wi-Fi</strong></td>
+<td>None</td>
+</tr>
+<tr>
+<td><strong>Bluetooth</strong></td>
+<td>BLE 5.0 (STM32WB only)</td>
+</tr>
+<tr>
+<td><strong>Sub-GHz Radio</strong></td>
+<td>Integrated SX1262-compatible LoRa/FSK radio (STM32WLE5)</td>
+</tr>
+<tr>
+<td><strong>GPIO</strong></td>
+<td>20–73 pins depending on variant</td>
+</tr>
+<tr>
+<td><strong>ADC</strong></td>
+<td>12-bit multi-channel ADC</td>
+</tr>
+<tr>
+<td><strong>USB</strong></td>
+<td>Full Speed on select variants</td>
+</tr>
+<tr>
+<td><strong>Sleep Current</strong></td>
+<td>~300 nA shutdown; ~2 µA standby</td>
+</tr>
+<tr>
+<td><strong>Operating Voltage</strong></td>
+<td>1.71–3.6 V</td>
+</tr>
+<tr>
+<td><strong>Price Range</strong></td>
+<td>Mid (~$5–$15 chip)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Notes:</strong> STM32WLE5 integrates an SX1262-equivalent LoRa radio on-die, eliminating the external radio chip — smaller PCB, lower BOM cost. Ultra-low shutdown current and hardware AES-256. Steeper toolchain (STM32CubeIDE), limited Meshtastic community support, and UFBGA package is difficult to hand-solder.</p>
+<hr />
+<h3 id="4-arm-linux-soc-eg-raspberry-pi-cm4">4. ARM + Linux SoC (e.g. Raspberry Pi / CM4)</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Architecture</strong></td>
+<td>ARM Cortex-A53/A72 @ 1.5–2.4 GHz</td>
+</tr>
+<tr>
+<td><strong>RAM</strong></td>
+<td>512 MB – 8 GB</td>
+</tr>
+<tr>
+<td><strong>Storage</strong></td>
+<td>microSD / eMMC</td>
+</tr>
+<tr>
+<td><strong>Wi-Fi</strong></td>
+<td>802.11ac dual-band (Pi 4/5, CM4)</td>
+</tr>
+<tr>
+<td><strong>Bluetooth</strong></td>
+<td>BLE 5.0</td>
+</tr>
+<tr>
+<td><strong>USB</strong></td>
+<td>USB 2.0 + USB 3.0</td>
+</tr>
+<tr>
+<td><strong>GPIO</strong></td>
+<td>40-pin header</td>
+</tr>
+<tr>
+<td><strong>OS</strong></td>
+<td>Full Linux (Debian / Raspberry Pi OS)</td>
+</tr>
+<tr>
+<td><strong>Idle Power</strong></td>
+<td>~600 mA – 2+ A @ 5 V</td>
+</tr>
+<tr>
+<td><strong>Boot Time</strong></td>
+<td>20–60 seconds</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Notes:</strong> Best treated as a fixed gateway or router node. Runs Meshtastic as a <code>meshtasticd</code> daemon alongside MQTT, web servers, and automation scripts. High continuous power draw and boot latency make battery operation and sleep/wake cycles impractical. Requires an external LoRa HAT.</p>
+<hr />
+<h2 id="lora-modems">LoRa Modems</h2>
+<blockquote>
+<p><strong>Generation overview:</strong> Semtech has released multiple generations of LoRa silicon. Gen 1 (SX127x) is legacy. Gen 2 (SX126x) is the current mainstream recommended family. Gen 3 (LR11xx) adds multi-band and geolocation. The STM32WLE5 integrates a Gen 2-equivalent radio directly on the MCU die.</p>
+</blockquote>
+<hr />
+<h3 id="1-sx1262-sx1268-gen-2-recommended">1. SX1262 / SX1268 — Gen 2 (Recommended)</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Frequency Bands</strong></td>
+<td>SX1262: 150–960 MHz (868/915 MHz focus); SX1268: 410–810 MHz (433/470 MHz focus)</td>
+</tr>
+<tr>
+<td><strong>Modulation</strong></td>
+<td>LoRa, (G)FSK, BPSK</td>
+</tr>
+<tr>
+<td><strong>Max TX Power</strong></td>
+<td>+22 dBm</td>
+</tr>
+<tr>
+<td><strong>Receive Sensitivity</strong></td>
+<td>–148 dBm @ SF12, 125 kHz BW</td>
+</tr>
+<tr>
+<td><strong>Spreading Factors</strong></td>
+<td>SF5–SF12</td>
+</tr>
+<tr>
+<td><strong>Bandwidth</strong></td>
+<td>7.8–500 kHz</td>
+</tr>
+<tr>
+<td><strong>Max Air Data Rate</strong></td>
+<td>~62.5 kbps (LoRa mode)</td>
+</tr>
+<tr>
+<td><strong>Interface</strong></td>
+<td>SPI</td>
+</tr>
+<tr>
+<td><strong>Supply Voltage</strong></td>
+<td>1.8–3.7 V</td>
+</tr>
+<tr>
+<td><strong>RX Current</strong></td>
+<td>~4.6 mA</td>
+</tr>
+<tr>
+<td><strong>TX Current</strong></td>
+<td>~118 mA @ +22 dBm</td>
+</tr>
+<tr>
+<td><strong>Sleep Current</strong></td>
+<td>~900 nA</td>
+</tr>
+<tr>
+<td><strong>Package</strong></td>
+<td>QFN-24 (4×4 mm)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Notes:</strong> The dominant modem in current Meshtastic hardware — strongly recommended for all new builds. Roughly half the RX current of SX127x, +2 dBm more TX power, higher data rate, smaller package, and lower supply voltage. SX1262 and SX1268 are pin-compatible and share the same driver. SX1261 is a lower-output sibling (+15 dBm max) used in ultra-low-power designs.</p>
+<hr />
+<h3 id="2-sx1276-sx1278-gen-1-legacy">2. SX1276 / SX1278 — Gen 1 (Legacy)</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Frequency Bands</strong></td>
+<td>SX1276: 137–1020 MHz; SX1278: 137–525 MHz</td>
+</tr>
+<tr>
+<td><strong>Modulation</strong></td>
+<td>LoRa, (G)FSK, OOK</td>
+</tr>
+<tr>
+<td><strong>Max TX Power</strong></td>
+<td>+20 dBm</td>
+</tr>
+<tr>
+<td><strong>Receive Sensitivity</strong></td>
+<td>–148 dBm @ SF12, 125 kHz BW</td>
+</tr>
+<tr>
+<td><strong>Spreading Factors</strong></td>
+<td>SF6–SF12</td>
+</tr>
+<tr>
+<td><strong>Bandwidth</strong></td>
+<td>7.8–500 kHz</td>
+</tr>
+<tr>
+<td><strong>Max Air Data Rate</strong></td>
+<td>~37.5 kbps (LoRa mode)</td>
+</tr>
+<tr>
+<td><strong>Interface</strong></td>
+<td>SPI</td>
+</tr>
+<tr>
+<td><strong>Supply Voltage</strong></td>
+<td>3.3 V</td>
+</tr>
+<tr>
+<td><strong>RX Current</strong></td>
+<td>~10–12 mA</td>
+</tr>
+<tr>
+<td><strong>TX Current</strong></td>
+<td>~120 mA @ +20 dBm</td>
+</tr>
+<tr>
+<td><strong>Sleep Current</strong></td>
+<td>~200 nA</td>
+</tr>
+<tr>
+<td><strong>Package</strong></td>
+<td>QFN-28 (6×6 mm)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Notes:</strong> Still found on early T-Beam and first-generation Heltec boards. Functional and inter-operable with SX126x nodes, but Meshtastic actively discourages new builds with these chips — lower efficiency PA, higher RX current, 3.3 V only, and larger package than SX126x.</p>
+<hr />
+<h3 id="3-sx1280-gen-2-24-ghz">3. SX1280 — Gen 2 (2.4 GHz)</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Frequency Band</strong></td>
+<td>2.400–2.500 GHz</td>
+</tr>
+<tr>
+<td><strong>Modulation</strong></td>
+<td>LoRa, (G)FSK, FLRC, BLE advertising compatible</td>
+</tr>
+<tr>
+<td><strong>Max TX Power</strong></td>
+<td>+12–13 dBm (standard); +20 dBm with external PA (used on T-Beam Supreme)</td>
+</tr>
+<tr>
+<td><strong>Receive Sensitivity</strong></td>
+<td>–132 dBm @ SF12, 203 kHz BW (LoRa)</td>
+</tr>
+<tr>
+<td><strong>Spreading Factors</strong></td>
+<td>SF5–SF12</td>
+</tr>
+<tr>
+<td><strong>Max Air Data Rate</strong></td>
+<td>1.6 Mbps (FLRC mode)</td>
+</tr>
+<tr>
+<td><strong>Interface</strong></td>
+<td>SPI</td>
+</tr>
+<tr>
+<td><strong>Supply Voltage</strong></td>
+<td>1.8–3.7 V</td>
+</tr>
+<tr>
+<td><strong>RX Current</strong></td>
+<td>~5.4 mA</td>
+</tr>
+<tr>
+<td><strong>Sleep Current</strong></td>
+<td>~900 nA</td>
+</tr>
+<tr>
+<td><strong>Package</strong></td>
+<td>QFN-24</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Notes:</strong> Operates on the globally license-free 2.4 GHz ISM band — useful for international deployments without frequency planning. Reduced range vs. sub-GHz LoRa (2.4 GHz penetrates walls and foliage less effectively), but well-suited for high-density, short-range mesh. FLRC mode enables very high data rates. Used on the LILYGO T3S3 and T-Beam Supreme with PA.</p>
+<hr />
+<h3 id="4-lr1110-lr1120-lr1121-gen-3-multi-band-geolocation">4. LR1110 / LR1120 / LR1121 — Gen 3 (Multi-band + Geolocation)</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Frequency Bands</strong></td>
+<td>150–960 MHz sub-GHz + 2.4 GHz ISM; LR1120/1121 also add S-band (1.9–2.1 GHz satellite); LR1121 adds L-band (1.55 GHz)</td>
+</tr>
+<tr>
+<td><strong>Modulation</strong></td>
+<td>LoRa, (G)FSK, BPSK, LR-FHSS</td>
+</tr>
+<tr>
+<td><strong>Max TX Power</strong></td>
+<td>+22 dBm (sub-GHz HP path); +15 dBm (LP path); +13 dBm (2.4 GHz / S-band)</td>
+</tr>
+<tr>
+<td><strong>Receive Sensitivity</strong></td>
+<td>–148 dBm @ SF12, 125 kHz BW — identical to SX1262</td>
+</tr>
+<tr>
+<td><strong>Spreading Factors</strong></td>
+<td>SF5–SF12</td>
+</tr>
+<tr>
+<td><strong>Interface</strong></td>
+<td>SPI (up to 16 MHz)</td>
+</tr>
+<tr>
+<td><strong>Supply Voltage</strong></td>
+<td>1.8–3.7 V</td>
+</tr>
+<tr>
+<td><strong>Sleep Current</strong></td>
+<td>~900 nA</td>
+</tr>
+<tr>
+<td><strong>Package</strong></td>
+<td>QFN-40</td>
+</tr>
+<tr>
+<td><strong>On-chip GNSS</strong></td>
+<td>Multi-constellation scanner (GPS, BeiDou) + passive Wi-Fi AP MAC scanner for cloud-assisted geolocation</td>
+</tr>
+<tr>
+<td><strong>SX1262 Compatible</strong></td>
+<td>Yes — air interface fully compatible with SX1261/2/8 family</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Notes:</strong> Supported and growing. The defining feature is the on-chip GNSS and Wi-Fi scanning engine, enabling low-power position fixes without a dedicated GPS module — used in the SenseCAP T1000-E card tracker and Elecrow ThinkNode M3. LR1110 = sub-GHz + 2.4 GHz; LR1120 adds S-band satellite; LR1121 adds L-band on top. <strong>Important:</strong> LR11xx nodes cannot receive packets from legacy SX127x (Gen 1) devices.</p>
+<hr />
+<h3 id="5-stm32wle5-integrated-radio-gen-2-soc">5. STM32WLE5 Integrated Radio — Gen 2 (SoC)</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Frequency Bands</strong></td>
+<td>150–960 MHz</td>
+</tr>
+<tr>
+<td><strong>Modulation</strong></td>
+<td>LoRa, (G)FSK, BPSK, OOK</td>
+</tr>
+<tr>
+<td><strong>Max TX Power</strong></td>
+<td>+22 dBm (HP path); +15 dBm (LP path)</td>
+</tr>
+<tr>
+<td><strong>Receive Sensitivity</strong></td>
+<td>–148 dBm @ SF12, 125 kHz BW</td>
+</tr>
+<tr>
+<td><strong>Spreading Factors</strong></td>
+<td>SF5–SF12</td>
+</tr>
+<tr>
+<td><strong>Radio Architecture</strong></td>
+<td>SX1262-compatible IP licensed from Semtech, running on dedicated Cortex-M0+ radio processor</td>
+</tr>
+<tr>
+<td><strong>Sleep Current</strong></td>
+<td>~300 nA shutdown (entire SoC including MCU)</td>
+</tr>
+<tr>
+<td><strong>Package</strong></td>
+<td>UFBGA73 or QFN48</td>
+</tr>
+<tr>
+<td><strong>SX1262 Compatible</strong></td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Notes:</strong> SX1262-equivalent RF performance in a single-chip SoC — eliminates the external radio, SPI bus, and RF matching network entirely. Best suited for compact custom hardware. Limited Meshtastic community support; main barrier is STM32 toolchain complexity.</p>
+<hr />
+<h2 id="summary-tables">Summary Tables</h2>
+<h3 id="mcus">MCUs</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>ESP32</th>
+<th>ESP32-S3</th>
+<th>nRF52840</th>
+<th>STM32WL/WB</th>
+<th>ARM+Linux</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Wi-Fi</strong></td>
+<td>✅</td>
+<td>✅</td>
+<td>❌</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><strong>BLE</strong></td>
+<td>4.2</td>
+<td>5.0</td>
+<td>5.0</td>
+<td>5.0 (WB)</td>
+<td>5.0</td>
+</tr>
+<tr>
+<td><strong>Native USB</strong></td>
+<td>❌</td>
+<td>✅</td>
+<td>✅</td>
+<td>Varies</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><strong>Battery Life</strong></td>
+<td>Medium</td>
+<td>Medium</td>
+<td>Best</td>
+<td>Excellent</td>
+<td>Worst</td>
+</tr>
+<tr>
+<td><strong>Meshtastic Support</strong></td>
+<td>Best</td>
+<td>Best</td>
+<td>Good</td>
+<td>Limited</td>
+<td>Good (daemon)</td>
+</tr>
+<tr>
+<td><strong>Cost</strong></td>
+<td>Low</td>
+<td>Low</td>
+<td>Mid</td>
+<td>Mid</td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Best Use Case</strong></td>
+<td>MQTT gateway, indoor</td>
+<td>Gateway, touchscreen UI</td>
+<td>Solar, handheld</td>
+<td>Custom hardware</td>
+<td>Fixed router</td>
+</tr>
+</tbody>
+</table>
+<h3 id="lora-modems_1">LoRa Modems</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>SX1262/68</th>
+<th>SX1276/78</th>
+<th>SX1280</th>
+<th>LR1110–1121</th>
+<th>STM32WLE5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Generation</strong></td>
+<td>Gen 2</td>
+<td>Gen 1</td>
+<td>Gen 2</td>
+<td>Gen 3</td>
+<td>Gen 2 (SoC)</td>
+</tr>
+<tr>
+<td><strong>Frequency</strong></td>
+<td>Sub-GHz</td>
+<td>Sub-GHz</td>
+<td>2.4 GHz</td>
+<td>Sub-GHz + 2.4 GHz (+ satellite)</td>
+<td>Sub-GHz</td>
+</tr>
+<tr>
+<td><strong>Sensitivity</strong></td>
+<td>–148 dBm</td>
+<td>–148 dBm</td>
+<td>–132 dBm</td>
+<td>–148 dBm</td>
+<td>–148 dBm</td>
+</tr>
+<tr>
+<td><strong>Max TX</strong></td>
+<td>+22 dBm</td>
+<td>+20 dBm</td>
+<td>+13 dBm (+20 w/PA)</td>
+<td>+22 dBm</td>
+<td>+22 dBm</td>
+</tr>
+<tr>
+<td><strong>RX Current</strong></td>
+<td>~4.6 mA</td>
+<td>~12 mA</td>
+<td>~5.4 mA</td>
+<td>~4.6 mA</td>
+<td>~4.6 mA</td>
+</tr>
+<tr>
+<td><strong>On-chip GNSS</strong></td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>✅</td>
+<td>❌</td>
+</tr>
+<tr>
+<td><strong>External chip needed</strong></td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No (on-die)</td>
+</tr>
+<tr>
+<td><strong>SX127x compatible</strong></td>
+<td>✅</td>
+<td>—</td>
+<td>❌</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><strong>Meshtastic status</strong></td>
+<td><strong>Recommended</strong></td>
+<td>Legacy</td>
+<td>Niche</td>
+<td>Growing</td>
+<td>Limited</td>
+</tr>
+</tbody>
+</table>
+<h4 id="pre-built-nodes">Pre-Built Nodes</h4>
+<p>If you prefer a simpler option, consider pre-built devices such as the <strong>Heltec V3/V4</strong>, <strong>WisMesh Pocket V2 / Tag</strong>, or <strong>T-Echo</strong>, many of which include a case.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      
+      <script id="__config" type="application/json">{"annotate":null,"base":"../..","features":["navigation.instant","navigation.tabs","navigation.sections","navigation.expand","navigation.top","search.highlight","content.code.copy"],"search":"../../assets/javascripts/workers/search.e2d2d235.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.16f8adc2.min.js"></script>
+      
+    
+  </body>
+</html>
