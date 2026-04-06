@@ -24,7 +24,8 @@ Join us for a monthly meeting!
 ## Club updates
 We are now officially a Sponsored Student Organization (SSO). This means the College of Engineering, specifically the ECE department has funded our club and allowed us to be affiliated with the Auburn University brand.
 
-Meshtastic radio orders will be placed soon and a build date will be set in place.
+Meshtastic radio orders have been placed and the build date is set to Tuesday April 14th 4:00-8:00pm in the Makerspace.
+Make sure to have your basic makerspace certification for this build day. A second date will be held for those who cannot make it.
 
 ## Lesson
-Andrew will cover encryption standards and the importance of self-reliant networks. This lesson will cover not only technical details but also a high-level ethical view of its significance.
+Andrew will cover encryption standards and algorithms, focusing on RSA, AES, and ECC encryption. We will study the math behind these algorithms and how they work with mesh networking.

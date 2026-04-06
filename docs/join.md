@@ -19,7 +19,7 @@
 <span class="action-card-icon">📝</span>
 <h3>Sign Up</h3>
 <p>Register through AUInvolve</p>
-<a href="#">Get Started</a>
+<a href="https://auburn.campuslabs.com/engage/organization/aumesh">Get Started</a>
 </div>
 
 <div class="action-card">
