@@ -1,0 +1,2163 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Student-led Meshtastic, LoRa, and mesh networking at Auburn University">
+      
+      
+      
+        <link rel="canonical" href="https://andrewsuggs465.github.io/documentation/meshtastic/microcontrollers/">
+      
+      
+        <link rel="prev" href="../protocol/">
+      
+      
+        <link rel="next" href="../build-options/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/logos/SVG_au.svg">
+      <meta name="generator" content="zensical-0.0.24">
+    
+    
+      
+        <title>Microcontrollers, Modems, and GNSS - Auburn University Mesh Club</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../../../assets/stylesheets/modern/main.28978c9b.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/modern/palette.dfe2e883.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Outfit:300,300i,400,400i,500,500i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Outfit";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+      <link rel="stylesheet" href="../../../assets/styles/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,a=__md_scope)=>JSON.parse(t.getItem(a.pathname+"."+e)),__md_set=(e,t,a=localStorage,_=__md_scope)=>{try{a.setItem(_.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#microcontrollers-modems-and-gnss" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Auburn University Mesh Club" class="md-header__button md-logo" aria-label="Auburn University Mesh Club" data-md-component="logo">
+      
+  <img src="../../../assets/logos/SVG_au.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Auburn University Mesh Club
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Microcontrollers, Modems, and GNSS
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="none" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Search">
+  <button type="button" class="md-search__button">
+    Search
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+        <a href="https://github.com/andrewsuggs465/AU-Meshtastic" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    andrewsuggs465/AU-Meshtastic
+  </div>
+</a>
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../join/" class="md-tabs__link">
+        
+  
+  Join
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  Documentation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../assets/events/placeholder/" class="md-tabs__link">
+          
+  
+  Events
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../projects/" class="md-tabs__link">
+        
+  
+  Project Hub
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../resources/" class="md-tabs__link">
+        
+  
+  Resources
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://auburn.box.com/s/d4jgsr0w9i4rygxcakc5eockw36nfeiw" class="md-tabs__link">
+        
+  
+  Uploads
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Auburn University Mesh Club" class="md-nav__button md-logo" aria-label="Auburn University Mesh Club" data-md-component="logo">
+      
+  <img src="../../../assets/logos/SVG_au.svg" alt="logo">
+
+    </a>
+    Auburn University Mesh Club
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/andrewsuggs465/AU-Meshtastic" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    andrewsuggs465/AU-Meshtastic
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../join/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Join
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Documentation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Meshtastic
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Meshtastic
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Intro & Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Meshtastic Protocol
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Microcontrollers & Modems
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Microcontrollers & Modems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#microcontrollers-mcus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Microcontrollers (MCUs)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Microcontrollers (MCUs)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#esp32-esp32-s3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ESP32 / ESP32-S3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nrf52840" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        nRF52840
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sbc-linux-soc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SBC / Linux SoC
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lora-modems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LoRa Modems
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LoRa Modems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sx1262-sx1268-sub-ghz-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SX1262 / SX1268 (Sub-GHz, Recommended)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sx1276-sx1278-legacy-sub-ghz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SX1276 / SX1278 (Legacy, Sub-GHz)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gnss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GNSS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GNSS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#l76k-quectel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        L76K (Quectel)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#u-blox-neo-m8-neo-m9-series" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        u-blox (NEO-M8 / NEO-M9 Series)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quick-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Comparison
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../build-options/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Popular Build Options
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../antennas-rf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Antennas, LoRa & RF
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../assembly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assembly Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../app-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    App Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../encryption/encryption/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Encryption
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Events
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Events
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Meetings
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Meetings
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assets/events/placeholder/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Come back next semester!
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Previous
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Previous
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assets/events/2026-04-14-build-day/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2026-04-14 — Build Day
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assets/events/2026-04-09-tabling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2026-04-09 — Concourse Tabling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assets/events/2026-04-06-monthly-meeting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2026-04-06 — Monthly Meeting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assets/events/2026-04-01-privacy-talk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2026-04-01 — ADCS Privacy Talk
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assets/events/2026-03-16-workshop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2026-03-16 — Workshop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assets/events/2026-03-02-monthly-meeting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2026-03-02 — Monthly Meeting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assets/events/2026-02-02-monthly-meeting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2026-02-02 — Monthly Meeting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Hub
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://auburn.box.com/s/d4jgsr0w9i4rygxcakc5eockw36nfeiw" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Uploads
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#microcontrollers-mcus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Microcontrollers (MCUs)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Microcontrollers (MCUs)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#esp32-esp32-s3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ESP32 / ESP32-S3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nrf52840" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        nRF52840
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sbc-linux-soc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SBC / Linux SoC
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lora-modems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LoRa Modems
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LoRa Modems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sx1262-sx1268-sub-ghz-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SX1262 / SX1268 (Sub-GHz, Recommended)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sx1276-sx1278-legacy-sub-ghz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SX1276 / SX1278 (Legacy, Sub-GHz)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gnss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GNSS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GNSS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#l76k-quectel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        L76K (Quectel)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#u-blox-neo-m8-neo-m9-series" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        u-blox (NEO-M8 / NEO-M9 Series)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quick-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Comparison
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+  
+  
+
+
+<h1 id="microcontrollers-modems-and-gnss">Microcontrollers, Modems, and GNSS</h1>
+<h2 id="microcontrollers-mcus">Microcontrollers (MCUs)</h2>
+<h3 id="esp32-esp32-s3">ESP32 / ESP32-S3</h3>
+<ul>
+<li><strong>Best for:</strong> MQTT gateways, portable nodes</li>
+<li><strong>Pros:</strong> 2.4 GHz WiFi</li>
+<li><strong>Cons:</strong> Higher power draw</li>
+<li><strong>Cost:</strong> Low (~$2–$8 module)</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Architecture</strong></td>
+<td>Xtensa LX6 dual-core @ 240 MHz (ESP32); LX7 dual-core @ 240 MHz (S3)</td>
+</tr>
+<tr>
+<td><strong>RAM</strong></td>
+<td>520 KB SRAM (ESP32); 512 KB + optional PSRAM (S3)</td>
+</tr>
+<tr>
+<td><strong>Flash</strong></td>
+<td>External, typically 4–16 MB</td>
+</tr>
+<tr>
+<td><strong>Wi-Fi</strong></td>
+<td>802.11 b/g/n 2.4 GHz — yes on both</td>
+</tr>
+<tr>
+<td><strong>Bluetooth</strong></td>
+<td>BT Classic + BLE 4.2 (ESP32); BLE 5.0 (S3)</td>
+</tr>
+<tr>
+<td><strong>Sleep Current</strong></td>
+<td>~10 µA deep sleep; ~40–80 mA typical active RX</td>
+</tr>
+<tr>
+<td><strong>Operating Voltage</strong></td>
+<td>3.0–3.6 V</td>
+</tr>
+<tr>
+<td><strong>USB</strong></td>
+<td>Requires CP2102/CH340 bridge (ESP32); native USB on S3</td>
+</tr>
+</tbody>
+</table>
+<h3 id="nrf52840">nRF52840</h3>
+<ul>
+<li><strong>Best for:</strong> Solar/battery-powered handhelds</li>
+<li><strong>Pros:</strong> Exceptional power efficiency (~2 µA deep sleep)</li>
+<li><strong>Cons:</strong> No Wi-Fi, mid-tier pricing</li>
+<li><strong>Cost:</strong> Mid (~$10–$20 module)</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Architecture</strong></td>
+<td>ARM Cortex-M4F @ 64 MHz</td>
+</tr>
+<tr>
+<td><strong>RAM</strong></td>
+<td>256 KB SRAM</td>
+</tr>
+<tr>
+<td><strong>Flash</strong></td>
+<td>1 MB internal</td>
+</tr>
+<tr>
+<td><strong>Wi-Fi</strong></td>
+<td>None</td>
+</tr>
+<tr>
+<td><strong>Bluetooth</strong></td>
+<td>BLE 5.0 + Bluetooth Mesh + NFC</td>
+</tr>
+<tr>
+<td><strong>Sleep Current</strong></td>
+<td>~2 µA deep sleep; as low as ~11 µA in typical Meshtastic standby</td>
+</tr>
+<tr>
+<td><strong>Operating Voltage</strong></td>
+<td>1.7–5.5 V</td>
+</tr>
+<tr>
+<td><strong>USB</strong></td>
+<td>Native USB 2.0 Full Speed</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sbc-linux-soc">SBC / Linux SoC</h3>
+<ul>
+<li><strong>Best for:</strong> Fixed gateway/router nodes, MQTT bridges, automation</li>
+<li><strong>Pros:</strong> Full Linux OS, Wi-Fi/Bluetooth, can run Meshtastic daemon + other services</li>
+<li><strong>Cons:</strong> High continuous power draw (600 mA – 2+ A @ 5 V), impractical for battery/sleep cycles</li>
+<li><strong>Cost:</strong> High</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Architecture</strong></td>
+<td>ARM Cortex-A53/A72 @ 1.5–2.4 GHz</td>
+</tr>
+<tr>
+<td><strong>RAM</strong></td>
+<td>512 MB – 8 GB</td>
+</tr>
+<tr>
+<td><strong>Storage</strong></td>
+<td>microSD / eMMC</td>
+</tr>
+<tr>
+<td><strong>Wi-Fi</strong></td>
+<td>802.11ac dual-band (Pi 4/5, CM4)</td>
+</tr>
+<tr>
+<td><strong>Bluetooth</strong></td>
+<td>BLE 5.0</td>
+</tr>
+<tr>
+<td><strong>Idle Power</strong></td>
+<td>~600 mA – 2+ A @ 5 V</td>
+</tr>
+<tr>
+<td><strong>Requires</strong></td>
+<td>External LoRa HAT</td>
+</tr>
+</tbody>
+</table>
+<h2 id="lora-modems">LoRa Modems</h2>
+<h3 id="sx1262-sx1268-sub-ghz-recommended">SX1262 / SX1268 (Sub-GHz, Recommended)</h3>
+<ul>
+<li><strong>Pros:</strong> Higher TX power, more efficient, smaller package</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Frequency Bands</strong></td>
+<td>SX1262: 868/915 MHz; SX1268: 433/470 MHz</td>
+</tr>
+<tr>
+<td><strong>Range</strong></td>
+<td>–148 dBm sensitivity @ SF12, 125 kHz BW</td>
+</tr>
+<tr>
+<td><strong>Power</strong></td>
+<td>~4.6 mA RX, ~118 mA TX @ +22 dBm, 900 nA sleep</td>
+</tr>
+<tr>
+<td><strong>Max TX Power</strong></td>
+<td>+22 dBm</td>
+</tr>
+<tr>
+<td><strong>Spreading Factors</strong></td>
+<td>SF5–SF12</td>
+</tr>
+<tr>
+<td><strong>Bandwidth</strong></td>
+<td>7.8–500 kHz</td>
+</tr>
+<tr>
+<td><strong>Max Air Data Rate</strong></td>
+<td>~62.5 kbps (LoRa mode)</td>
+</tr>
+<tr>
+<td><strong>Interface</strong></td>
+<td>SPI</td>
+</tr>
+<tr>
+<td><strong>Supply Voltage</strong></td>
+<td>1.8–3.7 V</td>
+</tr>
+<tr>
+<td><strong>Package</strong></td>
+<td>QFN-24 (4×4 mm)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sx1276-sx1278-legacy-sub-ghz">SX1276 / SX1278 (Legacy, Sub-GHz)</h3>
+<ul>
+<li><strong>Status:</strong> Legacy (still supported but not recommended)</li>
+<li><strong>Why:</strong> Higher RX current, larger package, 3.3V only</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Frequency Bands</strong></td>
+<td>SX1276: 137–1020 MHz; SX1278: 137–525 MHz</td>
+</tr>
+<tr>
+<td><strong>Range</strong></td>
+<td>–148 dBm sensitivity @ SF12, 125 kHz BW</td>
+</tr>
+<tr>
+<td><strong>Power</strong></td>
+<td>~10–12 mA RX, ~120 mA TX @ +20 dBm</td>
+</tr>
+<tr>
+<td><strong>Max TX Power</strong></td>
+<td>+20 dBm</td>
+</tr>
+<tr>
+<td><strong>Spreading Factors</strong></td>
+<td>SF6–SF12</td>
+</tr>
+<tr>
+<td><strong>Bandwidth</strong></td>
+<td>7.8–500 kHz</td>
+</tr>
+<tr>
+<td><strong>Max Air Data Rate</strong></td>
+<td>~37.5 kbps (LoRa mode)</td>
+</tr>
+<tr>
+<td><strong>Interface</strong></td>
+<td>SPI</td>
+</tr>
+<tr>
+<td><strong>Supply Voltage</strong></td>
+<td>3.3 V</td>
+</tr>
+<tr>
+<td><strong>Package</strong></td>
+<td>QFN-28 (6×6 mm)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="gnss">GNSS</h2>
+<h3 id="l76k-quectel">L76K (Quectel)</h3>
+<ul>
+<li><strong>Pros:</strong> Low cost (~$2–5), minimal power draw, compact form factor</li>
+<li><strong>Cons:</strong> Lower accuracy in urban canyons, less satellite constellation support</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Positioning Support</strong></td>
+<td>GPS, BeiDou, GLONASS</td>
+</tr>
+<tr>
+<td><strong>Positioning Accuracy</strong></td>
+<td>Standard precision (1-5 meters)</td>
+</tr>
+<tr>
+<td><strong>Acquisition</strong></td>
+<td>-148 dBm</td>
+</tr>
+<tr>
+<td><strong>Re-Acquisition</strong></td>
+<td>-160 dBm</td>
+</tr>
+<tr>
+<td><strong>Tracking</strong></td>
+<td>-162 dBm</td>
+</tr>
+<tr>
+<td><strong>Position Accuracy (CEP)</strong></td>
+<td>2.0 meters</td>
+</tr>
+<tr>
+<td><strong>Speed Accuracy</strong></td>
+<td>0.1 m/s</td>
+</tr>
+<tr>
+<td><strong>Update Rate</strong></td>
+<td>5 Hz (configurable)</td>
+</tr>
+<tr>
+<td><strong>Warm Start</strong></td>
+<td>~5–15 seconds</td>
+</tr>
+<tr>
+<td><strong>Cold Start</strong></td>
+<td>~35 seconds</td>
+</tr>
+</tbody>
+</table>
+<h3 id="u-blox-neo-m8-neo-m9-series">u-blox (NEO-M8 / NEO-M9 Series)</h3>
+<ul>
+<li><strong>Pros:</strong> Superior multi-constellation support, faster acquisition, better urban canyon performance, widely supported</li>
+<li><strong>Cons:</strong> Higher cost (~$10–20), larger footprint, slightly higher power draw</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Positioning Support</strong></td>
+<td>GPS, BeiDou, GLONASS, Galileo (multi-constellation)</td>
+</tr>
+<tr>
+<td><strong>Positioning Accuracy</strong></td>
+<td>High precision (1–2.5 meters, 1–5 meters urban)</td>
+</tr>
+<tr>
+<td><strong>Acquisition</strong></td>
+<td>-150 dBm</td>
+</tr>
+<tr>
+<td><strong>Re-Acquisition</strong></td>
+<td>-163 dBm</td>
+</tr>
+<tr>
+<td><strong>Tracking</strong></td>
+<td>-166 dBm</td>
+</tr>
+<tr>
+<td><strong>Position Accuracy (CEP)</strong></td>
+<td>1.0–1.5 meters</td>
+</tr>
+<tr>
+<td><strong>Speed Accuracy</strong></td>
+<td>0.05 m/s</td>
+</tr>
+<tr>
+<td><strong>Update Rate</strong></td>
+<td>10 Hz (configurable)</td>
+</tr>
+<tr>
+<td><strong>Warm Start</strong></td>
+<td>~2–5 seconds</td>
+</tr>
+<tr>
+<td><strong>Cold Start</strong></td>
+<td>~15–25 seconds</td>
+</tr>
+</tbody>
+</table>
+<h3 id="quick-comparison">Quick Comparison</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>L76K</th>
+<th>u-blox</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Cost</strong></td>
+<td>$2–5</td>
+<td>$10–20</td>
+</tr>
+<tr>
+<td><strong>Accuracy (CEP)</strong></td>
+<td>2.0 m</td>
+<td>1.0–1.5 m</td>
+</tr>
+<tr>
+<td><strong>Constellations</strong></td>
+<td>3 (GPS/BeiDou/GLONASS)</td>
+<td>4 (adds Galileo)</td>
+</tr>
+<tr>
+<td><strong>Cold Start</strong></td>
+<td>~35 s</td>
+<td>~15–25 s</td>
+</tr>
+<tr>
+<td><strong>Urban Performance</strong></td>
+<td>Moderate</td>
+<td>Excellent</td>
+</tr>
+<tr>
+<td><strong>Power (active)</strong></td>
+<td>30–50 mA</td>
+<td>40–70 mA</td>
+</tr>
+<tr>
+<td><strong>Best Use</strong></td>
+<td>Budget builds, moderate precision</td>
+<td>Precision required, difficult environments</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      
+      <script id="__config" type="application/json">{"annotate":null,"base":"../../..","features":["navigation.instant","navigation.tabs","navigation.sections","navigation.expand","navigation.top","search.highlight","content.code.copy"],"search":"../../../assets/javascripts/workers/search.e2d2d235.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.16f8adc2.min.js"></script>
+      
+    
+  </body>
+</html>

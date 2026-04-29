@@ -1,0 +1,2294 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Student-led Meshtastic, LoRa, and mesh networking at Auburn University">
+      
+      
+      
+        <link rel="canonical" href="https://andrewsuggs465.github.io/documentation/encryption/encryption/">
+      
+      
+        <link rel="prev" href="../../meshtastic/app-overview/">
+      
+      
+        <link rel="next" href="../../../assets/events/placeholder/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/logos/SVG_au.svg">
+      <meta name="generator" content="zensical-0.0.24">
+    
+    
+      
+        <title>Encryption Algorithms - Auburn University Mesh Club</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../../../assets/stylesheets/modern/main.28978c9b.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/modern/palette.dfe2e883.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Outfit:300,300i,400,400i,500,500i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Outfit";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+      <link rel="stylesheet" href="../../../assets/styles/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,a=__md_scope)=>JSON.parse(t.getItem(a.pathname+"."+e)),__md_set=(e,t,a=localStorage,_=__md_scope)=>{try{a.setItem(_.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#encryption-algorithms" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Auburn University Mesh Club" class="md-header__button md-logo" aria-label="Auburn University Mesh Club" data-md-component="logo">
+      
+  <img src="../../../assets/logos/SVG_au.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Auburn University Mesh Club
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Encryption Algorithms
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="none" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Search">
+  <button type="button" class="md-search__button">
+    Search
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+        <a href="https://github.com/andrewsuggs465/AU-Meshtastic" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    andrewsuggs465/AU-Meshtastic
+  </div>
+</a>
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../join/" class="md-tabs__link">
+        
+  
+  Join
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  Documentation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../assets/events/placeholder/" class="md-tabs__link">
+          
+  
+  Events
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../projects/" class="md-tabs__link">
+        
+  
+  Project Hub
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../resources/" class="md-tabs__link">
+        
+  
+  Resources
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://auburn.box.com/s/d4jgsr0w9i4rygxcakc5eockw36nfeiw" class="md-tabs__link">
+        
+  
+  Uploads
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Auburn University Mesh Club" class="md-nav__button md-logo" aria-label="Auburn University Mesh Club" data-md-component="logo">
+      
+  <img src="../../../assets/logos/SVG_au.svg" alt="logo">
+
+    </a>
+    Auburn University Mesh Club
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/andrewsuggs465/AU-Meshtastic" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    andrewsuggs465/AU-Meshtastic
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../join/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Join
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Documentation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Meshtastic
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Meshtastic
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../meshtastic/intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Intro & Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../meshtastic/protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Meshtastic Protocol
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../meshtastic/microcontrollers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Microcontrollers & Modems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../meshtastic/build-options/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Popular Build Options
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../meshtastic/antennas-rf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Antennas, LoRa & RF
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../meshtastic/assembly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assembly Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../meshtastic/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../meshtastic/app-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    App Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Encryption
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Encryption
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#section-1-introduction-core-applications-and-fundamental-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 1: Introduction — Core Applications and Fundamental Types
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 1: Introduction — Core Applications and Fundamental Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Applications
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#encryption-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Encryption Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-2-rsa-encryption" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 2: RSA Encryption
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 2: RSA Encryption">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rsa-key-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RSA Key Generation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rsa-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RSA Implementation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rsa-specs-tradeoffs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RSA Specs &amp; Tradeoffs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-3-aes-encryption" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 3: AES Encryption
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 3: AES Encryption">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#block-cipher-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Block Cipher Algorithm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#confusion-and-diffusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Confusion and Diffusion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AES
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aes-uses-tradeoffs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AES Uses &amp; Tradeoffs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-4-ecc-encryption" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 4: ECC Encryption
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 4: ECC Encryption">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#math-refresh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Math Refresh
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discrete-logarithms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Discrete Logarithms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elliptic-curves" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Elliptic Curves
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ecc-encryption" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ECC Encryption
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-5-conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 5: Conclusion
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 5: Conclusion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#relevance-for-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relevance for Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mesh-networking-relevance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mesh Networking Relevance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#future-considerations-quantum-computing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Future Considerations: Quantum Computing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Events
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Events
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Meetings
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Meetings
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assets/events/placeholder/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Come back next semester!
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Previous
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Previous
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assets/events/2026-04-14-build-day/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2026-04-14 — Build Day
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assets/events/2026-04-09-tabling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2026-04-09 — Concourse Tabling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assets/events/2026-04-06-monthly-meeting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2026-04-06 — Monthly Meeting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assets/events/2026-04-01-privacy-talk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2026-04-01 — ADCS Privacy Talk
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assets/events/2026-03-16-workshop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2026-03-16 — Workshop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assets/events/2026-03-02-monthly-meeting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2026-03-02 — Monthly Meeting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assets/events/2026-02-02-monthly-meeting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2026-02-02 — Monthly Meeting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Hub
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://auburn.box.com/s/d4jgsr0w9i4rygxcakc5eockw36nfeiw" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Uploads
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#section-1-introduction-core-applications-and-fundamental-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 1: Introduction — Core Applications and Fundamental Types
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 1: Introduction — Core Applications and Fundamental Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Applications
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#encryption-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Encryption Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-2-rsa-encryption" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 2: RSA Encryption
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 2: RSA Encryption">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rsa-key-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RSA Key Generation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rsa-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RSA Implementation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rsa-specs-tradeoffs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RSA Specs &amp; Tradeoffs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-3-aes-encryption" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 3: AES Encryption
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 3: AES Encryption">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#block-cipher-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Block Cipher Algorithm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#confusion-and-diffusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Confusion and Diffusion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AES
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aes-uses-tradeoffs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AES Uses &amp; Tradeoffs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-4-ecc-encryption" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 4: ECC Encryption
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 4: ECC Encryption">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#math-refresh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Math Refresh
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discrete-logarithms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Discrete Logarithms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elliptic-curves" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Elliptic Curves
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ecc-encryption" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ECC Encryption
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-5-conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 5: Conclusion
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 5: Conclusion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#relevance-for-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relevance for Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mesh-networking-relevance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mesh Networking Relevance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#future-considerations-quantum-computing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Future Considerations: Quantum Computing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+  
+  
+
+
+<h1 id="encryption-algorithms">Encryption Algorithms</h1>
+<p><em>A dive into how encryption works and why it is important</em></p>
+<hr />
+<h2 id="section-1-introduction-core-applications-and-fundamental-types">Section 1: Introduction — Core Applications and Fundamental Types</h2>
+<h3 id="core-applications">Core Applications</h3>
+<p><strong>Communications</strong>
+- E2EE is becoming standard for direct messaging
+- Examples: TLS/SSL (HTTPS), SSH, Instant Messaging
+- Used to store secret data or to message authorized parties
+- Core part of IPsec (routing, DNS, tunneling)
+- PGP suite: allows encryption &amp; signing</p>
+<p><strong>Credentials</strong>
+- Used for confirming someone is who they say they are
+- Account passwords: local, cloud, etc.
+- 802.11 suite: WPA2, WPA3
+- Authentication: EAP, MSCHAPv2
+- Disk encryption / file encryption</p>
+<hr />
+<h3 id="encryption-types">Encryption Types</h3>
+<p><strong>Symmetric</strong>
+- Key is pre-shared between client and recipient
+- Used to both encrypt and decrypt message
+- Extremely fast; hardware-accelerated</p>
+<p><strong>Asymmetric (Public-Key)</strong>
+- Two keys: Public and Private
+- Often used to exchange credentials / verify authenticity
+- <strong>Encryption:</strong> Encrypt with recipient's public key — only their private key can decrypt
+- <strong>Authentication:</strong> Sign with your private key; anyone with your public key can verify</p>
+<hr />
+<h3 id="key-types">Key Types</h3>
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Type</th>
+<th>Basis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>RSA</strong> (Rivest-Shamir-Adleman)</td>
+<td>Asymmetric</td>
+<td>Factorization of large numbers and modular arithmetic</td>
+</tr>
+<tr>
+<td><strong>AES</strong> (Advanced Encryption Standard)</td>
+<td>Symmetric block cipher</td>
+<td>Confusion and diffusion</td>
+</tr>
+<tr>
+<td><strong>ECC</strong> (Elliptic Curve Cryptography)</td>
+<td>Asymmetric</td>
+<td>Elliptic Curve Discrete Logarithm Problem (ECDLP)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="section-2-rsa-encryption">Section 2: RSA Encryption</h2>
+<h3 id="rsa-key-generation">RSA Key Generation</h3>
+<p>RSA relies on the <strong>trapdoor function</strong>: easy to produce, difficult to reverse.</p>
+<ul>
+<li><code>N = p × q</code> where p and q are large primes</li>
+</ul>
+<p><strong>Euler's Totient Function φ(n)</strong> counts the number of positive integers up to n that are relatively prime to n (sharing no common factors other than 1).</p>
+<blockquote>
+<p><strong>Example — n = 9:</strong>
+Integers with common factors: {3, 6, 9}
+Totatives: {1, 2, 4, 5, 7, 8} → φ(9) = 6</p>
+<p><strong>Example — n = 15</strong> (since 15 = 3 × 5, both prime):
+φ(15) = φ(3) × φ(5) = (3−1) × (5−1) = 2 × 4 = <strong>8</strong>
+Totatives: {1, 2, 4, 7, 8, 11, 13, 14}</p>
+</blockquote>
+<hr />
+<h3 id="rsa-implementation">RSA Implementation</h3>
+<p><strong>Key Generation Steps:</strong>
+1. Compute <code>N = p × q</code>
+2. Compute <code>φ(N) = (p−1)(q−1)</code>
+3. <strong>Public Exponent:</strong> Choose <code>e</code> with <code>1 &lt; e &lt; φ(N)</code> and <code>gcd(e, φ(N)) = 1</code>
+4. <strong>Private Exponent <code>d</code>:</strong> <code>e × d ≡ 1 (mod φ(N))</code>
+5. <strong>Public Key:</strong> <code>(N, e)</code> — <strong>Private Key:</strong> <code>(N, d)</code>
+6. <strong>Encryption:</strong> <code>C = Mᵉ (mod N)</code>
+7. <strong>Decryption:</strong> <code>M = Cᵈ (mod N)</code></p>
+<p><strong>Worked Example (p = 3, q = 11):</strong>
+- <code>n = 33</code>, <code>φ(n) = 20</code>, <code>e = 3</code>, <code>d = 7</code>
+- Public Key: <code>(33, 3)</code> — Private Key: <code>(33, 7)</code>
+- Encrypt message <code>m = 7</code>: <code>c = 7³ (mod 33) = 343 (mod 33) = 13</code>
+- Decrypt ciphertext <code>c = 13</code>: <code>m = 13⁷ (mod 33) = 7</code> ✓</p>
+<hr />
+<h3 id="rsa-specs-tradeoffs">RSA Specs &amp; Tradeoffs</h3>
+<p><strong>Technical Specifications:</strong>
+- Typical key sizes: 2048-bit (current standard), 4096-bit (high security)
+- Prime numbers p, q: 300+ digits for a 2048-bit key
+- Common public exponent: 65537 (2¹⁶ + 1)</p>
+<table>
+<thead>
+<tr>
+<th>Advantages</th>
+<th>Disadvantages</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Simple &amp; versatile</td>
+<td>Computationally expensive</td>
+</tr>
+<tr>
+<td>Proven reliable — used since 1977</td>
+<td>Large key sizes</td>
+</tr>
+<tr>
+<td>Hardware accelerated</td>
+<td>Side-channel risks (predictable)</td>
+</tr>
+<tr>
+<td>Asymmetric</td>
+<td>Vulnerable to quantum attacks</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="section-3-aes-encryption">Section 3: AES Encryption</h2>
+<h3 id="block-cipher-algorithm">Block Cipher Algorithm</h3>
+<ol>
+<li>Takes a fixed-length block of plaintext and a secret key, transforming them into a ciphertext block of the same length</li>
+<li><strong>Block size:</strong> Common sizes are 64 or 128 bits; messages smaller than the block size are padded</li>
+<li><strong>Rounds:</strong> Performs a series of repetitive operations — substitution and diffusion</li>
+</ol>
+<hr />
+<h3 id="confusion-and-diffusion">Confusion and Diffusion</h3>
+<p><strong>Confusion</strong>
+- Each byte is substituted via a nonlinear lookup table (S-box)
+- Makes the relationship between key and ciphertext complex and unpredictable
+- Example: Caesar Cipher shifts each letter by a fixed amount</p>
+<p><strong>Diffusion</strong>
+- Bytes are shuffled and mixed across the block
+- <strong>Avalanche Effect:</strong> A single changed input bit affects roughly half of the output bits after a few rounds
+- Example transposition: <code>abcd</code> → <code>dabc</code></p>
+<hr />
+<h3 id="aes">AES</h3>
+<p><strong>How It Works:</strong>
+1. Symmetric algorithm
+2. Key sizes: 128, 192, or 256 bits
+3. Block size: fixed at 128 bits
+4. Structure: Substitution-Permutation Network (SPN)
+5. Rounds: 10 (128-bit), 12 (192-bit), 14 (256-bit)</p>
+<p>Each round consists of: <strong>SubBytes → ShiftRows → MixColumns → Add Round Key</strong>
+(Last round omits MixColumns)</p>
+<hr />
+<h3 id="aes-uses-tradeoffs">AES Uses &amp; Tradeoffs</h3>
+<p><strong>Uses:</strong>
+- File/disk encryption
+- Secure communications (TLS/SSL data stream)
+- Wireless security: WPA2 and WPA3
+- Government standards: Top Secret data protection globally</p>
+<table>
+<thead>
+<tr>
+<th>Advantages</th>
+<th>Disadvantages</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Speed</td>
+<td>Key distribution challenges</td>
+</tr>
+<tr>
+<td>Secure</td>
+<td>Implementation complexity</td>
+</tr>
+<tr>
+<td>Hardware accelerated</td>
+<td>Low memory footprint (can be a constraint)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="section-4-ecc-encryption">Section 4: ECC Encryption</h2>
+<h3 id="math-refresh">Math Refresh</h3>
+<p><strong>Linear (Continuous) Logarithms</strong>
+- The inverse of exponents: given <code>bˣ = y</code>, find x
+- Power rule: <code>log(bˣ) = x · log(b)</code> → <code>x = log(y) / log(b)</code>
+- Example: <code>2ˣ = 32</code> → <code>x = log(32)/log(2) = 5</code></p>
+<p><strong>Modular (Discrete) Logarithms</strong>
+- Given <code>gˣ ≡ y (mod n)</code>, find x
+- The power rule no longer applies — this is the <strong>Discrete Logarithm Problem (DLP)</strong>
+- For small numbers, relatively solvable; for large numbers, computationally infeasible</p>
+<hr />
+<h3 id="discrete-logarithms">Discrete Logarithms</h3>
+<p>Computing successive powers of <code>g = 2 (mod 5)</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Power</th>
+<th>Result (mod 5)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2¹</td>
+<td>2</td>
+</tr>
+<tr>
+<td>2²</td>
+<td>4</td>
+</tr>
+<tr>
+<td>2³</td>
+<td>3</td>
+</tr>
+<tr>
+<td>2⁴</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2⁵</td>
+<td>2 (cycle repeats)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Outputs follow no predictable order</li>
+<li>For a 256-bit modulus, the cycle length is astronomically large</li>
+<li>Security relies on the computational inefficiency of reversing this process</li>
+</ul>
+<hr />
+<h3 id="elliptic-curves">Elliptic Curves</h3>
+<p><strong>Definition:</strong> <code>y² = x³ + ax + b (mod p)</code></p>
+<ul>
+<li>Parameters <code>a</code>, <code>b</code>, and <code>p</code> define the specific curve</li>
+<li>Only discrete integer coordinate pairs <code>(x, y)</code> are valid points for cryptography</li>
+<li><strong>Point Addition:</strong> Given two points A and B, draw a line through them to find a third intersection point R, then reflect R across the x-axis to get <code>A + B</code></li>
+</ul>
+<hr />
+<h3 id="ecc-encryption">ECC Encryption</h3>
+<p><strong>Scalar Multiplication:</strong> Repeated addition of a point to itself
+- <code>P = k × G</code> (G is the generator point, k is the scalar)
+- <strong>Private key:</strong> <code>k</code> — a randomly chosen large integer, kept secret
+- <strong>Public key:</strong> <code>P</code> — the resulting point, shared openly</p>
+<p><strong>ECDLP (Elliptic Curve Discrete Logarithm Problem):</strong>
+- Computing <code>P</code> from <code>k</code> and <code>G</code> is fast
+- The reverse has no known sub-exponential algorithm for elliptic curves — this is the security foundation</p>
+<hr />
+<h2 id="section-5-conclusion">Section 5: Conclusion</h2>
+<h3 id="relevance-for-security">Relevance for Security</h3>
+<ul>
+<li><strong>Privacy:</strong> End-to-end encryption (E2EE) means only you and your recipient can read your messages — not your ISP, app company, or anyone else</li>
+<li><strong>Network protection:</strong> Secures communications on networks you can't control (public WiFi, employer/school networks)</li>
+<li><strong>Trust backbone:</strong> Secures sensitive transactions and underpins trust in digital communications</li>
+<li><strong>Encrypted authentication:</strong> Keeps your identity yours</li>
+<li><strong>Breach protection:</strong> Protects your data even when companies are compromised</li>
+</ul>
+<p><strong>Case Study — Logjam (2015):</strong>
+- Attack on live TLS connections exploiting outdated policy and mathematical precomputation
+- Demonstrated that theoretical weaknesses can become real, scalable attacks
+- TLS still supported weak encryption standards (512-bit keys)
+- Using the <strong>Number Field Sieve (NFS)</strong>, a 512-bit key could be broken in about a week
+- Most servers shared the same set of primes — a one-time computation could break thousands of machines simultaneously</p>
+<hr />
+<h3 id="mesh-networking-relevance">Mesh Networking Relevance</h3>
+<p><strong>Key Distribution Challenges:</strong>
+- Mesh networks have nodes joining and leaving dynamically, making secure distribution and routing difficult
+- Most mesh networks use <strong>asymmetric</strong> approaches for handshakes, then <strong>symmetric (AES)</strong> for bulk data
+- <strong>Multi-hop exposure:</strong> each hop is a potential interception point — E2EE is necessary
+- <strong>Node authentication:</strong> RSA or ECC signatures prove identity without sharing a secret</p>
+<hr />
+<h3 id="future-considerations-quantum-computing">Future Considerations: Quantum Computing</h3>
+<ul>
+<li><strong>Shor's algorithm:</strong> A quantum algorithm capable of finding prime factors of an integer — both RSA and ECC are vulnerable</li>
+<li>As quantum computing develops, quantum-resistant standards are becoming necessary</li>
+<li><strong>Post-quantum cryptography (PQC):</strong> NIST finalized standards in 2024, based on the difficulty of <strong>lattice problems</strong></li>
+<li>Migration to PQC is complex — affects hardware, mesh networks, and all existing infrastructure</li>
+</ul>
+<p><strong>If "Q-Day" happened tomorrow:</strong>
+- <strong>What breaks:</strong> RSA and ECC — keys derivable, digital signatures forgeable
+- <strong>What survives:</strong> Symmetric encryption (AES) and hashing algorithms (SHA-2) with longer keys
+- <strong>Real risk:</strong> Loss of trust in public-key infrastructure, certificate authorities, and digital identities
+- <strong>Recovery:</strong> Depends on speed of migration to post-quantum standards (FIPS 203, 204, 205)</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      
+      <script id="__config" type="application/json">{"annotate":null,"base":"../../..","features":["navigation.instant","navigation.tabs","navigation.sections","navigation.expand","navigation.top","search.highlight","content.code.copy"],"search":"../../../assets/javascripts/workers/search.e2d2d235.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.16f8adc2.min.js"></script>
+      
+    
+  </body>
+</html>

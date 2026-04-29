@@ -44,14 +44,16 @@ nav:
   - Join: join.md
   - Documentation:
     - Overview: documentation.md
-    - Intro & Overview: documentation/intro.md
-    - Meshtastic Protocol: documentation/protocol.md
-    - Microcontrollers & Modems: documentation/microcontrollers.md
-    - Popular Build Options: documentation/build-options.md
-    - Antennas, LoRa & RF: documentation/antennas-rf.md
-    - Assembly Guide: documentation/assembly.md
-    - Installation: documentation/installation.md
-    - App Overview: documentation/app-overview.md
+    - Meshtastic:
+      - Intro & Overview: documentation/meshtastic/intro.md
+      - Meshtastic Protocol: documentation/meshtastic/protocol.md
+      - Microcontrollers & Modems: documentation/meshtastic/microcontrollers.md
+      - Popular Build Options: documentation/meshtastic/build-options.md
+      - Antennas, LoRa & RF: documentation/meshtastic/antennas-rf.md
+      - Assembly Guide: documentation/meshtastic/assembly.md
+      - Installation: documentation/meshtastic/installation.md
+      - App Overview: documentation/meshtastic/app-overview.md
+    - Encryption: documentation/encryption/encryption.md
   - Events: 
     - Meetings:
         - Come back next semester!: assets/events/placeholder.md
