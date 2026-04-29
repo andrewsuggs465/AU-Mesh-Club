@@ -11,8 +11,8 @@
 <div class="action-card">
 <span class="action-card-icon material-icons">event</span>
 <h3>Attend Events</h3>
-<p>Come to a meeting or build night</p>
-<a href="#community-events">See Events</a>
+<p>Come to a meeting or workshop</p>
+<a href="https://auburn.campuslabs.com/engage/organization/aumesh/events">See Events</a>
 </div>
 
 <div class="action-card">
@@ -26,7 +26,7 @@
 <span class="action-card-icon material-icons">build</span>
 <h3>Build a Node</h3>
 <p>Create your first Meshtastic device</p>
-<a href="/starting-guide/">Learn More</a>
+<a href="../documentation/meshtastic/intro">Learn More</a>
 </div>
 </div>
 

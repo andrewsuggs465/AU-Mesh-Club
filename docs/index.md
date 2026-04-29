@@ -11,7 +11,7 @@ A student-led organization focused on mesh networks, wireless and embedded syste
 <span class="action-card-icon material-icons">menu_book</span>
 <h3>Getting Started</h3>
 <p>Dive into our extensive collection of documentation!</p>
-<a href="starting-guide">Read Guide</a>
+<a href="../documentation">Read Guide</a>
 </div>
 
 <div class="action-card">
