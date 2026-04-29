@@ -1,4 +1,4 @@
-site_name: Auburn University Meshtastic
+site_name: Auburn University Mesh Club
 site_description: Student-led Meshtastic, LoRa, and mesh networking at Auburn University
 site_url: https://andrewsuggs465.github.io/
 
@@ -28,6 +28,7 @@ theme:
     code: JetBrains Mono
 
 extra_css:
+  - https://fonts.googleapis.com/icon?family=Material+Icons
   - assets/styles/extra.css
 
 markdown_extensions:
@@ -42,7 +43,7 @@ nav:
   - Home: index.md
   - Join: join.md
   - Documentation:
-    - Overview: starting-guide.md
+    - Overview: documentation.md
     - Intro & Overview: documentation/intro.md
     - Meshtastic Protocol: documentation/protocol.md
     - Microcontrollers & Modems: documentation/microcontrollers.md
@@ -53,6 +54,7 @@ nav:
     - App Overview: documentation/app-overview.md
   - Events: 
     - Meetings:
+        - Come back next semester!: assets/events/placeholder.md
     - Previous:
         - 2026-04-14 — Build Day: assets/events/2026-04-14-build-day.md
         - 2026-04-09 — Concourse Tabling: assets/events/2026-04-09-tabling.md

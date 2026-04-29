@@ -27,7 +27,7 @@
     
     
       
-        <title>Microcontrollers and Modems - Auburn University Meshtastic</title>
+        <title>Microcontrollers, Modems, and GNSS - Auburn University Mesh Club</title>
       
     
     
@@ -58,6 +58,8 @@
       
     
     
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
       <link rel="stylesheet" href="../../assets/styles/extra.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,a=__md_scope)=>JSON.parse(t.getItem(a.pathname+"."+e)),__md_set=(e,t,a=localStorage,_=__md_scope)=>{try{a.setItem(_.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
@@ -85,7 +87,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#microcontrollers-and-modems" class="md-skip">
+        <a href="#microcontrollers-modems-and-gnss" class="md-skip">
           Skip to content
         </a>
       
@@ -99,7 +101,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Auburn University Meshtastic" class="md-header__button md-logo" aria-label="Auburn University Meshtastic" data-md-component="logo">
+    <a href="../.." title="Auburn University Mesh Club" class="md-header__button md-logo" aria-label="Auburn University Mesh Club" data-md-component="logo">
       
   <img src="../../assets/logos/SVG_au.svg" alt="logo">
 
@@ -112,13 +114,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Auburn University Meshtastic
+            Auburn University Mesh Club
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Microcontrollers and Modems
+              Microcontrollers, Modems, and GNSS
             
           </span>
         </div>
@@ -224,7 +226,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../starting-guide/" class="md-tabs__link">
+        <a href="../" class="md-tabs__link">
           
   
   Documentation
@@ -250,7 +252,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../assets/events/2026-04-06-monthly-meeting/" class="md-tabs__link">
+        <a href="../../assets/events/placeholder/" class="md-tabs__link">
           
   
   Events
@@ -334,12 +336,12 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Auburn University Meshtastic" class="md-nav__button md-logo" aria-label="Auburn University Meshtastic" data-md-component="logo">
+    <a href="../.." title="Auburn University Mesh Club" class="md-nav__button md-logo" aria-label="Auburn University Mesh Club" data-md-component="logo">
       
   <img src="../../assets/logos/SVG_au.svg" alt="logo">
 
     </a>
-    Auburn University Meshtastic
+    Auburn University Mesh Club
   </label>
   
     <div class="md-nav__source">
@@ -474,7 +476,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../starting-guide/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
@@ -631,10 +633,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-esp32-esp32-s3" class="md-nav__link">
+  <a href="#esp32-esp32-s3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. ESP32 / ESP32-S3
+        ESP32 / ESP32-S3
       
     </span>
   </a>
@@ -642,10 +644,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-nrf52840" class="md-nav__link">
+  <a href="#nrf52840" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. nRF52840
+        nRF52840
       
     </span>
   </a>
@@ -653,21 +655,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-stm32wl-stm32wb-arm-cortex-m4" class="md-nav__link">
+  <a href="#sbc-linux-soc" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. STM32WL / STM32WB (ARM Cortex-M4)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-arm-linux-soc-eg-raspberry-pi-cm4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. ARM + Linux SoC (e.g. Raspberry Pi / CM4)
+        SBC / Linux SoC
       
     </span>
   </a>
@@ -692,10 +683,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-sx1262-sx1268-gen-2-recommended" class="md-nav__link">
+  <a href="#sx1262-sx1268-sub-ghz-recommended" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. SX1262 / SX1268 — Gen 2 (Recommended)
+        SX1262 / SX1268 (Sub-GHz, Recommended)
       
     </span>
   </a>
@@ -703,43 +694,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-sx1276-sx1278-gen-1-legacy" class="md-nav__link">
+  <a href="#sx1276-sx1278-legacy-sub-ghz" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. SX1276 / SX1278 — Gen 1 (Legacy)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-sx1280-gen-2-24-ghz" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. SX1280 — Gen 2 (2.4 GHz)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-lr1110-lr1120-lr1121-gen-3-multi-band-geolocation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. LR1110 / LR1120 / LR1121 — Gen 3 (Multi-band + Geolocation)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-stm32wle5-integrated-radio-gen-2-soc" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. STM32WLE5 Integrated Radio — Gen 2 (SoC)
+        SX1276 / SX1278 (Legacy, Sub-GHz)
       
     </span>
   </a>
@@ -752,22 +710,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#summary-tables" class="md-nav__link">
+  <a href="#gnss" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Summary Tables
+        GNSS
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Summary Tables">
+    <nav class="md-nav" aria-label="GNSS">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#mcus" class="md-nav__link">
+  <a href="#l76k-quectel" class="md-nav__link">
     <span class="md-ellipsis">
       
-        MCUs
+        L76K (Quectel)
       
     </span>
   </a>
@@ -775,30 +733,24 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#lora-modems_1" class="md-nav__link">
+  <a href="#u-blox-neo-m8-neo-m9-series" class="md-nav__link">
     <span class="md-ellipsis">
       
-        LoRa Modems
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="LoRa Modems">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#pre-built-nodes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Pre-Built Nodes
+        u-blox (NEO-M8 / NEO-M9 Series)
       
     </span>
   </a>
   
 </li>
         
-      </ul>
-    </nav>
+          <li class="md-nav__item">
+  <a href="#quick-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Comparison
+      
+    </span>
+  </a>
   
 </li>
         
@@ -1078,70 +1030,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../assets/events/2026-04-06-monthly-meeting/" class="md-nav__link">
+      <a href="../../assets/events/placeholder/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    2026-04-06 — Monthly Meeting
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../assets/events/2026-04-09-tabling/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    2026-04-09 — Concourse Tabling
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../assets/events/2026-04-14-build-day/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    2026-04-09 — Build Day
+    Come back next semester!
   
 
     
@@ -1216,6 +1112,90 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../assets/events/2026-04-14-build-day/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2026-04-14 — Build Day
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../assets/events/2026-04-09-tabling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2026-04-09 — Concourse Tabling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../assets/events/2026-04-06-monthly-meeting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2026-04-06 — Monthly Meeting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -1465,10 +1445,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-esp32-esp32-s3" class="md-nav__link">
+  <a href="#esp32-esp32-s3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. ESP32 / ESP32-S3
+        ESP32 / ESP32-S3
       
     </span>
   </a>
@@ -1476,10 +1456,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-nrf52840" class="md-nav__link">
+  <a href="#nrf52840" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. nRF52840
+        nRF52840
       
     </span>
   </a>
@@ -1487,21 +1467,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-stm32wl-stm32wb-arm-cortex-m4" class="md-nav__link">
+  <a href="#sbc-linux-soc" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. STM32WL / STM32WB (ARM Cortex-M4)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-arm-linux-soc-eg-raspberry-pi-cm4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. ARM + Linux SoC (e.g. Raspberry Pi / CM4)
+        SBC / Linux SoC
       
     </span>
   </a>
@@ -1526,10 +1495,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-sx1262-sx1268-gen-2-recommended" class="md-nav__link">
+  <a href="#sx1262-sx1268-sub-ghz-recommended" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. SX1262 / SX1268 — Gen 2 (Recommended)
+        SX1262 / SX1268 (Sub-GHz, Recommended)
       
     </span>
   </a>
@@ -1537,43 +1506,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-sx1276-sx1278-gen-1-legacy" class="md-nav__link">
+  <a href="#sx1276-sx1278-legacy-sub-ghz" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. SX1276 / SX1278 — Gen 1 (Legacy)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-sx1280-gen-2-24-ghz" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. SX1280 — Gen 2 (2.4 GHz)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-lr1110-lr1120-lr1121-gen-3-multi-band-geolocation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. LR1110 / LR1120 / LR1121 — Gen 3 (Multi-band + Geolocation)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-stm32wle5-integrated-radio-gen-2-soc" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. STM32WLE5 Integrated Radio — Gen 2 (SoC)
+        SX1276 / SX1278 (Legacy, Sub-GHz)
       
     </span>
   </a>
@@ -1586,22 +1522,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#summary-tables" class="md-nav__link">
+  <a href="#gnss" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Summary Tables
+        GNSS
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Summary Tables">
+    <nav class="md-nav" aria-label="GNSS">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#mcus" class="md-nav__link">
+  <a href="#l76k-quectel" class="md-nav__link">
     <span class="md-ellipsis">
       
-        MCUs
+        L76K (Quectel)
       
     </span>
   </a>
@@ -1609,30 +1545,24 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#lora-modems_1" class="md-nav__link">
+  <a href="#u-blox-neo-m8-neo-m9-series" class="md-nav__link">
     <span class="md-ellipsis">
       
-        LoRa Modems
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="LoRa Modems">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#pre-built-nodes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Pre-Built Nodes
+        u-blox (NEO-M8 / NEO-M9 Series)
       
     </span>
   </a>
   
 </li>
         
-      </ul>
-    </nav>
+          <li class="md-nav__item">
+  <a href="#quick-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Comparison
+      
+    </span>
+  </a>
   
 </li>
         
@@ -1659,9 +1589,15 @@
   
 
 
-<h1 id="microcontrollers-and-modems">Microcontrollers and Modems</h1>
+<h1 id="microcontrollers-modems-and-gnss">Microcontrollers, Modems, and GNSS</h1>
 <h2 id="microcontrollers-mcus">Microcontrollers (MCUs)</h2>
-<h3 id="1-esp32-esp32-s3">1. ESP32 / ESP32-S3</h3>
+<h3 id="esp32-esp32-s3">ESP32 / ESP32-S3</h3>
+<ul>
+<li><strong>Best for:</strong> MQTT gateways, portable nodes</li>
+<li><strong>Pros:</strong> 2.4 GHz WiFi</li>
+<li><strong>Cons:</strong> Higher power draw</li>
+<li><strong>Cost:</strong> Low (~$2–$8 module)</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -1691,18 +1627,6 @@
 <td>BT Classic + BLE 4.2 (ESP32); BLE 5.0 (S3)</td>
 </tr>
 <tr>
-<td><strong>GPIO</strong></td>
-<td>34 pins (ESP32); 45 pins (S3)</td>
-</tr>
-<tr>
-<td><strong>ADC/DAC</strong></td>
-<td>18× ADC, 2× DAC (ESP32); 20× ADC (S3)</td>
-</tr>
-<tr>
-<td><strong>USB</strong></td>
-<td>Requires CP2102/CH340 bridge (ESP32); native USB on S3</td>
-</tr>
-<tr>
 <td><strong>Sleep Current</strong></td>
 <td>~10 µA deep sleep; ~40–80 mA typical active RX</td>
 </tr>
@@ -1711,14 +1635,18 @@
 <td>3.0–3.6 V</td>
 </tr>
 <tr>
-<td><strong>Price Range</strong></td>
-<td>Low (~$2–$8 module)</td>
+<td><strong>USB</strong></td>
+<td>Requires CP2102/CH340 bridge (ESP32); native USB on S3</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Notes:</strong> Most widely used MCU in Meshtastic hardware. Wi-Fi enables MQTT bridging and web UI, but significantly higher power draw than nRF52840 makes it unsuitable for solar or long-term battery nodes. No native USB on classic ESP32.</p>
-<hr />
-<h3 id="2-nrf52840">2. nRF52840</h3>
+<h3 id="nrf52840">nRF52840</h3>
+<ul>
+<li><strong>Best for:</strong> Solar/battery-powered handhelds</li>
+<li><strong>Pros:</strong> Exceptional power efficiency (~2 µA deep sleep)</li>
+<li><strong>Cons:</strong> No Wi-Fi, mid-tier pricing</li>
+<li><strong>Cost:</strong> Mid (~$10–$20 module)</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -1748,18 +1676,6 @@
 <td>BLE 5.0 + Bluetooth Mesh + NFC</td>
 </tr>
 <tr>
-<td><strong>GPIO</strong></td>
-<td>48 pins</td>
-</tr>
-<tr>
-<td><strong>ADC</strong></td>
-<td>8× 12-bit SAR ADC</td>
-</tr>
-<tr>
-<td><strong>USB</strong></td>
-<td>Native USB 2.0 Full Speed</td>
-</tr>
-<tr>
 <td><strong>Sleep Current</strong></td>
 <td>~2 µA deep sleep; as low as ~11 µA in typical Meshtastic standby</td>
 </tr>
@@ -1768,75 +1684,18 @@
 <td>1.7–5.5 V</td>
 </tr>
 <tr>
-<td><strong>Price Range</strong></td>
-<td>Mid (~$10–$20 module)</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Notes:</strong> Best-in-class power efficiency — Meshtastic strongly recommends it for solar and handheld applications. Native USB with UF2 drag-and-drop flashing. No Wi-Fi means no web UI without external hardware.</p>
-<hr />
-<h3 id="3-stm32wl-stm32wb-arm-cortex-m4">3. STM32WL / STM32WB (ARM Cortex-M4)</h3>
-<table>
-<thead>
-<tr>
-<th>Feature</th>
-<th>Detail</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Architecture</strong></td>
-<td>ARM Cortex-M4 @ 48 MHz + Cortex-M0+ radio coprocessor (WL); dual Cortex-M4 (WB)</td>
-</tr>
-<tr>
-<td><strong>RAM</strong></td>
-<td>64–256 KB SRAM</td>
-</tr>
-<tr>
-<td><strong>Flash</strong></td>
-<td>256 KB – 1 MB internal</td>
-</tr>
-<tr>
-<td><strong>Wi-Fi</strong></td>
-<td>None</td>
-</tr>
-<tr>
-<td><strong>Bluetooth</strong></td>
-<td>BLE 5.0 (STM32WB only)</td>
-</tr>
-<tr>
-<td><strong>Sub-GHz Radio</strong></td>
-<td>Integrated SX1262-compatible LoRa/FSK radio (STM32WLE5)</td>
-</tr>
-<tr>
-<td><strong>GPIO</strong></td>
-<td>20–73 pins depending on variant</td>
-</tr>
-<tr>
-<td><strong>ADC</strong></td>
-<td>12-bit multi-channel ADC</td>
-</tr>
-<tr>
 <td><strong>USB</strong></td>
-<td>Full Speed on select variants</td>
-</tr>
-<tr>
-<td><strong>Sleep Current</strong></td>
-<td>~300 nA shutdown; ~2 µA standby</td>
-</tr>
-<tr>
-<td><strong>Operating Voltage</strong></td>
-<td>1.71–3.6 V</td>
-</tr>
-<tr>
-<td><strong>Price Range</strong></td>
-<td>Mid (~$5–$15 chip)</td>
+<td>Native USB 2.0 Full Speed</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Notes:</strong> STM32WLE5 integrates an SX1262-equivalent LoRa radio on-die, eliminating the external radio chip — smaller PCB, lower BOM cost. Ultra-low shutdown current and hardware AES-256. Steeper toolchain (STM32CubeIDE), limited Meshtastic community support, and UFBGA package is difficult to hand-solder.</p>
-<hr />
-<h3 id="4-arm-linux-soc-eg-raspberry-pi-cm4">4. ARM + Linux SoC (e.g. Raspberry Pi / CM4)</h3>
+<h3 id="sbc-linux-soc">SBC / Linux SoC</h3>
+<ul>
+<li><strong>Best for:</strong> Fixed gateway/router nodes, MQTT bridges, automation</li>
+<li><strong>Pros:</strong> Full Linux OS, Wi-Fi/Bluetooth, can run Meshtastic daemon + other services</li>
+<li><strong>Cons:</strong> High continuous power draw (600 mA – 2+ A @ 5 V), impractical for battery/sleep cycles</li>
+<li><strong>Cost:</strong> High</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -1866,35 +1725,20 @@
 <td>BLE 5.0</td>
 </tr>
 <tr>
-<td><strong>USB</strong></td>
-<td>USB 2.0 + USB 3.0</td>
-</tr>
-<tr>
-<td><strong>GPIO</strong></td>
-<td>40-pin header</td>
-</tr>
-<tr>
-<td><strong>OS</strong></td>
-<td>Full Linux (Debian / Raspberry Pi OS)</td>
-</tr>
-<tr>
 <td><strong>Idle Power</strong></td>
 <td>~600 mA – 2+ A @ 5 V</td>
 </tr>
 <tr>
-<td><strong>Boot Time</strong></td>
-<td>20–60 seconds</td>
+<td><strong>Requires</strong></td>
+<td>External LoRa HAT</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Notes:</strong> Best treated as a fixed gateway or router node. Runs Meshtastic as a <code>meshtasticd</code> daemon alongside MQTT, web servers, and automation scripts. High continuous power draw and boot latency make battery operation and sleep/wake cycles impractical. Requires an external LoRa HAT.</p>
-<hr />
 <h2 id="lora-modems">LoRa Modems</h2>
-<blockquote>
-<p><strong>Generation overview:</strong> Semtech has released multiple generations of LoRa silicon. Gen 1 (SX127x) is legacy. Gen 2 (SX126x) is the current mainstream recommended family. Gen 3 (LR11xx) adds multi-band and geolocation. The STM32WLE5 integrates a Gen 2-equivalent radio directly on the MCU die.</p>
-</blockquote>
-<hr />
-<h3 id="1-sx1262-sx1268-gen-2-recommended">1. SX1262 / SX1268 — Gen 2 (Recommended)</h3>
+<h3 id="sx1262-sx1268-sub-ghz-recommended">SX1262 / SX1268 (Sub-GHz, Recommended)</h3>
+<ul>
+<li><strong>Pros:</strong> Higher TX power, more efficient, smaller package</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -1905,19 +1749,19 @@
 <tbody>
 <tr>
 <td><strong>Frequency Bands</strong></td>
-<td>SX1262: 150–960 MHz (868/915 MHz focus); SX1268: 410–810 MHz (433/470 MHz focus)</td>
+<td>SX1262: 868/915 MHz; SX1268: 433/470 MHz</td>
 </tr>
 <tr>
-<td><strong>Modulation</strong></td>
-<td>LoRa, (G)FSK, BPSK</td>
+<td><strong>Range</strong></td>
+<td>–148 dBm sensitivity @ SF12, 125 kHz BW</td>
+</tr>
+<tr>
+<td><strong>Power</strong></td>
+<td>~4.6 mA RX, ~118 mA TX @ +22 dBm, 900 nA sleep</td>
 </tr>
 <tr>
 <td><strong>Max TX Power</strong></td>
 <td>+22 dBm</td>
-</tr>
-<tr>
-<td><strong>Receive Sensitivity</strong></td>
-<td>–148 dBm @ SF12, 125 kHz BW</td>
 </tr>
 <tr>
 <td><strong>Spreading Factors</strong></td>
@@ -1940,26 +1784,16 @@
 <td>1.8–3.7 V</td>
 </tr>
 <tr>
-<td><strong>RX Current</strong></td>
-<td>~4.6 mA</td>
-</tr>
-<tr>
-<td><strong>TX Current</strong></td>
-<td>~118 mA @ +22 dBm</td>
-</tr>
-<tr>
-<td><strong>Sleep Current</strong></td>
-<td>~900 nA</td>
-</tr>
-<tr>
 <td><strong>Package</strong></td>
 <td>QFN-24 (4×4 mm)</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Notes:</strong> The dominant modem in current Meshtastic hardware — strongly recommended for all new builds. Roughly half the RX current of SX127x, +2 dBm more TX power, higher data rate, smaller package, and lower supply voltage. SX1262 and SX1268 are pin-compatible and share the same driver. SX1261 is a lower-output sibling (+15 dBm max) used in ultra-low-power designs.</p>
-<hr />
-<h3 id="2-sx1276-sx1278-gen-1-legacy">2. SX1276 / SX1278 — Gen 1 (Legacy)</h3>
+<h3 id="sx1276-sx1278-legacy-sub-ghz">SX1276 / SX1278 (Legacy, Sub-GHz)</h3>
+<ul>
+<li><strong>Status:</strong> Legacy (still supported but not recommended)</li>
+<li><strong>Why:</strong> Higher RX current, larger package, 3.3V only</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -1973,16 +1807,16 @@
 <td>SX1276: 137–1020 MHz; SX1278: 137–525 MHz</td>
 </tr>
 <tr>
-<td><strong>Modulation</strong></td>
-<td>LoRa, (G)FSK, OOK</td>
+<td><strong>Range</strong></td>
+<td>–148 dBm sensitivity @ SF12, 125 kHz BW</td>
+</tr>
+<tr>
+<td><strong>Power</strong></td>
+<td>~10–12 mA RX, ~120 mA TX @ +20 dBm</td>
 </tr>
 <tr>
 <td><strong>Max TX Power</strong></td>
 <td>+20 dBm</td>
-</tr>
-<tr>
-<td><strong>Receive Sensitivity</strong></td>
-<td>–148 dBm @ SF12, 125 kHz BW</td>
 </tr>
 <tr>
 <td><strong>Spreading Factors</strong></td>
@@ -2005,26 +1839,17 @@
 <td>3.3 V</td>
 </tr>
 <tr>
-<td><strong>RX Current</strong></td>
-<td>~10–12 mA</td>
-</tr>
-<tr>
-<td><strong>TX Current</strong></td>
-<td>~120 mA @ +20 dBm</td>
-</tr>
-<tr>
-<td><strong>Sleep Current</strong></td>
-<td>~200 nA</td>
-</tr>
-<tr>
 <td><strong>Package</strong></td>
 <td>QFN-28 (6×6 mm)</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Notes:</strong> Still found on early T-Beam and first-generation Heltec boards. Functional and inter-operable with SX126x nodes, but Meshtastic actively discourages new builds with these chips — lower efficiency PA, higher RX current, 3.3 V only, and larger package than SX126x.</p>
-<hr />
-<h3 id="3-sx1280-gen-2-24-ghz">3. SX1280 — Gen 2 (2.4 GHz)</h3>
+<h2 id="gnss">GNSS</h2>
+<h3 id="l76k-quectel">L76K (Quectel)</h3>
+<ul>
+<li><strong>Pros:</strong> Low cost (~$2–5), minimal power draw, compact form factor</li>
+<li><strong>Cons:</strong> Lower accuracy in urban canyons, less satellite constellation support</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -2034,54 +1859,52 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>Frequency Band</strong></td>
-<td>2.400–2.500 GHz</td>
+<td><strong>Positioning Support</strong></td>
+<td>GPS, BeiDou, GLONASS</td>
 </tr>
 <tr>
-<td><strong>Modulation</strong></td>
-<td>LoRa, (G)FSK, FLRC, BLE advertising compatible</td>
+<td><strong>Positioning Accuracy</strong></td>
+<td>Standard precision (1-5 meters)</td>
 </tr>
 <tr>
-<td><strong>Max TX Power</strong></td>
-<td>+12–13 dBm (standard); +20 dBm with external PA (used on T-Beam Supreme)</td>
+<td><strong>Acquisition</strong></td>
+<td>-148 dBm</td>
 </tr>
 <tr>
-<td><strong>Receive Sensitivity</strong></td>
-<td>–132 dBm @ SF12, 203 kHz BW (LoRa)</td>
+<td><strong>Re-Acquisition</strong></td>
+<td>-160 dBm</td>
 </tr>
 <tr>
-<td><strong>Spreading Factors</strong></td>
-<td>SF5–SF12</td>
+<td><strong>Tracking</strong></td>
+<td>-162 dBm</td>
 </tr>
 <tr>
-<td><strong>Max Air Data Rate</strong></td>
-<td>1.6 Mbps (FLRC mode)</td>
+<td><strong>Position Accuracy (CEP)</strong></td>
+<td>2.0 meters</td>
 </tr>
 <tr>
-<td><strong>Interface</strong></td>
-<td>SPI</td>
+<td><strong>Speed Accuracy</strong></td>
+<td>0.1 m/s</td>
 </tr>
 <tr>
-<td><strong>Supply Voltage</strong></td>
-<td>1.8–3.7 V</td>
+<td><strong>Update Rate</strong></td>
+<td>5 Hz (configurable)</td>
 </tr>
 <tr>
-<td><strong>RX Current</strong></td>
-<td>~5.4 mA</td>
+<td><strong>Warm Start</strong></td>
+<td>~5–15 seconds</td>
 </tr>
 <tr>
-<td><strong>Sleep Current</strong></td>
-<td>~900 nA</td>
-</tr>
-<tr>
-<td><strong>Package</strong></td>
-<td>QFN-24</td>
+<td><strong>Cold Start</strong></td>
+<td>~35 seconds</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Notes:</strong> Operates on the globally license-free 2.4 GHz ISM band — useful for international deployments without frequency planning. Reduced range vs. sub-GHz LoRa (2.4 GHz penetrates walls and foliage less effectively), but well-suited for high-density, short-range mesh. FLRC mode enables very high data rates. Used on the LILYGO T3S3 and T-Beam Supreme with PA.</p>
-<hr />
-<h3 id="4-lr1110-lr1120-lr1121-gen-3-multi-band-geolocation">4. LR1110 / LR1120 / LR1121 — Gen 3 (Multi-band + Geolocation)</h3>
+<h3 id="u-blox-neo-m8-neo-m9-series">u-blox (NEO-M8 / NEO-M9 Series)</h3>
+<ul>
+<li><strong>Pros:</strong> Superior multi-constellation support, faster acquisition, better urban canyon performance, widely supported</li>
+<li><strong>Cons:</strong> Higher cost (~$10–20), larger footprint, slightly higher power draw</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -2091,263 +1914,94 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>Frequency Bands</strong></td>
-<td>150–960 MHz sub-GHz + 2.4 GHz ISM; LR1120/1121 also add S-band (1.9–2.1 GHz satellite); LR1121 adds L-band (1.55 GHz)</td>
+<td><strong>Positioning Support</strong></td>
+<td>GPS, BeiDou, GLONASS, Galileo (multi-constellation)</td>
 </tr>
 <tr>
-<td><strong>Modulation</strong></td>
-<td>LoRa, (G)FSK, BPSK, LR-FHSS</td>
+<td><strong>Positioning Accuracy</strong></td>
+<td>High precision (1–2.5 meters, 1–5 meters urban)</td>
 </tr>
 <tr>
-<td><strong>Max TX Power</strong></td>
-<td>+22 dBm (sub-GHz HP path); +15 dBm (LP path); +13 dBm (2.4 GHz / S-band)</td>
+<td><strong>Acquisition</strong></td>
+<td>-150 dBm</td>
 </tr>
 <tr>
-<td><strong>Receive Sensitivity</strong></td>
-<td>–148 dBm @ SF12, 125 kHz BW — identical to SX1262</td>
+<td><strong>Re-Acquisition</strong></td>
+<td>-163 dBm</td>
 </tr>
 <tr>
-<td><strong>Spreading Factors</strong></td>
-<td>SF5–SF12</td>
+<td><strong>Tracking</strong></td>
+<td>-166 dBm</td>
 </tr>
 <tr>
-<td><strong>Interface</strong></td>
-<td>SPI (up to 16 MHz)</td>
+<td><strong>Position Accuracy (CEP)</strong></td>
+<td>1.0–1.5 meters</td>
 </tr>
 <tr>
-<td><strong>Supply Voltage</strong></td>
-<td>1.8–3.7 V</td>
+<td><strong>Speed Accuracy</strong></td>
+<td>0.05 m/s</td>
 </tr>
 <tr>
-<td><strong>Sleep Current</strong></td>
-<td>~900 nA</td>
+<td><strong>Update Rate</strong></td>
+<td>10 Hz (configurable)</td>
 </tr>
 <tr>
-<td><strong>Package</strong></td>
-<td>QFN-40</td>
+<td><strong>Warm Start</strong></td>
+<td>~2–5 seconds</td>
 </tr>
 <tr>
-<td><strong>On-chip GNSS</strong></td>
-<td>Multi-constellation scanner (GPS, BeiDou) + passive Wi-Fi AP MAC scanner for cloud-assisted geolocation</td>
-</tr>
-<tr>
-<td><strong>SX1262 Compatible</strong></td>
-<td>Yes — air interface fully compatible with SX1261/2/8 family</td>
+<td><strong>Cold Start</strong></td>
+<td>~15–25 seconds</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Notes:</strong> Supported and growing. The defining feature is the on-chip GNSS and Wi-Fi scanning engine, enabling low-power position fixes without a dedicated GPS module — used in the SenseCAP T1000-E card tracker and Elecrow ThinkNode M3. LR1110 = sub-GHz + 2.4 GHz; LR1120 adds S-band satellite; LR1121 adds L-band on top. <strong>Important:</strong> LR11xx nodes cannot receive packets from legacy SX127x (Gen 1) devices.</p>
-<hr />
-<h3 id="5-stm32wle5-integrated-radio-gen-2-soc">5. STM32WLE5 Integrated Radio — Gen 2 (SoC)</h3>
-<table>
-<thead>
-<tr>
-<th>Feature</th>
-<th>Detail</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Frequency Bands</strong></td>
-<td>150–960 MHz</td>
-</tr>
-<tr>
-<td><strong>Modulation</strong></td>
-<td>LoRa, (G)FSK, BPSK, OOK</td>
-</tr>
-<tr>
-<td><strong>Max TX Power</strong></td>
-<td>+22 dBm (HP path); +15 dBm (LP path)</td>
-</tr>
-<tr>
-<td><strong>Receive Sensitivity</strong></td>
-<td>–148 dBm @ SF12, 125 kHz BW</td>
-</tr>
-<tr>
-<td><strong>Spreading Factors</strong></td>
-<td>SF5–SF12</td>
-</tr>
-<tr>
-<td><strong>Radio Architecture</strong></td>
-<td>SX1262-compatible IP licensed from Semtech, running on dedicated Cortex-M0+ radio processor</td>
-</tr>
-<tr>
-<td><strong>Sleep Current</strong></td>
-<td>~300 nA shutdown (entire SoC including MCU)</td>
-</tr>
-<tr>
-<td><strong>Package</strong></td>
-<td>UFBGA73 or QFN48</td>
-</tr>
-<tr>
-<td><strong>SX1262 Compatible</strong></td>
-<td>Yes</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Notes:</strong> SX1262-equivalent RF performance in a single-chip SoC — eliminates the external radio, SPI bus, and RF matching network entirely. Best suited for compact custom hardware. Limited Meshtastic community support; main barrier is STM32 toolchain complexity.</p>
-<hr />
-<h2 id="summary-tables">Summary Tables</h2>
-<h3 id="mcus">MCUs</h3>
+<h3 id="quick-comparison">Quick Comparison</h3>
 <table>
 <thead>
 <tr>
 <th></th>
-<th>ESP32</th>
-<th>ESP32-S3</th>
-<th>nRF52840</th>
-<th>STM32WL/WB</th>
-<th>ARM+Linux</th>
+<th>L76K</th>
+<th>u-blox</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><strong>Wi-Fi</strong></td>
-<td>✅</td>
-<td>✅</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅</td>
-</tr>
-<tr>
-<td><strong>BLE</strong></td>
-<td>4.2</td>
-<td>5.0</td>
-<td>5.0</td>
-<td>5.0 (WB)</td>
-<td>5.0</td>
-</tr>
-<tr>
-<td><strong>Native USB</strong></td>
-<td>❌</td>
-<td>✅</td>
-<td>✅</td>
-<td>Varies</td>
-<td>✅</td>
-</tr>
-<tr>
-<td><strong>Battery Life</strong></td>
-<td>Medium</td>
-<td>Medium</td>
-<td>Best</td>
-<td>Excellent</td>
-<td>Worst</td>
-</tr>
-<tr>
-<td><strong>Meshtastic Support</strong></td>
-<td>Best</td>
-<td>Best</td>
-<td>Good</td>
-<td>Limited</td>
-<td>Good (daemon)</td>
-</tr>
 <tr>
 <td><strong>Cost</strong></td>
-<td>Low</td>
-<td>Low</td>
-<td>Mid</td>
-<td>Mid</td>
-<td>High</td>
+<td>$2–5</td>
+<td>$10–20</td>
 </tr>
 <tr>
-<td><strong>Best Use Case</strong></td>
-<td>MQTT gateway, indoor</td>
-<td>Gateway, touchscreen UI</td>
-<td>Solar, handheld</td>
-<td>Custom hardware</td>
-<td>Fixed router</td>
+<td><strong>Accuracy (CEP)</strong></td>
+<td>2.0 m</td>
+<td>1.0–1.5 m</td>
+</tr>
+<tr>
+<td><strong>Constellations</strong></td>
+<td>3 (GPS/BeiDou/GLONASS)</td>
+<td>4 (adds Galileo)</td>
+</tr>
+<tr>
+<td><strong>Cold Start</strong></td>
+<td>~35 s</td>
+<td>~15–25 s</td>
+</tr>
+<tr>
+<td><strong>Urban Performance</strong></td>
+<td>Moderate</td>
+<td>Excellent</td>
+</tr>
+<tr>
+<td><strong>Power (active)</strong></td>
+<td>30–50 mA</td>
+<td>40–70 mA</td>
+</tr>
+<tr>
+<td><strong>Best Use</strong></td>
+<td>Budget builds, moderate precision</td>
+<td>Precision required, difficult environments</td>
 </tr>
 </tbody>
 </table>
-<h3 id="lora-modems_1">LoRa Modems</h3>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>SX1262/68</th>
-<th>SX1276/78</th>
-<th>SX1280</th>
-<th>LR1110–1121</th>
-<th>STM32WLE5</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Generation</strong></td>
-<td>Gen 2</td>
-<td>Gen 1</td>
-<td>Gen 2</td>
-<td>Gen 3</td>
-<td>Gen 2 (SoC)</td>
-</tr>
-<tr>
-<td><strong>Frequency</strong></td>
-<td>Sub-GHz</td>
-<td>Sub-GHz</td>
-<td>2.4 GHz</td>
-<td>Sub-GHz + 2.4 GHz (+ satellite)</td>
-<td>Sub-GHz</td>
-</tr>
-<tr>
-<td><strong>Sensitivity</strong></td>
-<td>–148 dBm</td>
-<td>–148 dBm</td>
-<td>–132 dBm</td>
-<td>–148 dBm</td>
-<td>–148 dBm</td>
-</tr>
-<tr>
-<td><strong>Max TX</strong></td>
-<td>+22 dBm</td>
-<td>+20 dBm</td>
-<td>+13 dBm (+20 w/PA)</td>
-<td>+22 dBm</td>
-<td>+22 dBm</td>
-</tr>
-<tr>
-<td><strong>RX Current</strong></td>
-<td>~4.6 mA</td>
-<td>~12 mA</td>
-<td>~5.4 mA</td>
-<td>~4.6 mA</td>
-<td>~4.6 mA</td>
-</tr>
-<tr>
-<td><strong>On-chip GNSS</strong></td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅</td>
-<td>❌</td>
-</tr>
-<tr>
-<td><strong>External chip needed</strong></td>
-<td>Yes</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>No (on-die)</td>
-</tr>
-<tr>
-<td><strong>SX127x compatible</strong></td>
-<td>✅</td>
-<td>—</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅</td>
-</tr>
-<tr>
-<td><strong>Meshtastic status</strong></td>
-<td><strong>Recommended</strong></td>
-<td>Legacy</td>
-<td>Niche</td>
-<td>Growing</td>
-<td>Limited</td>
-</tr>
-</tbody>
-</table>
-<h4 id="pre-built-nodes">Pre-Built Nodes</h4>
-<p>If you prefer a simpler option, consider pre-built devices such as the <strong>Heltec V3/V4</strong>, <strong>WisMesh Pocket V2 / Tag</strong>, or <strong>T-Echo</strong>, many of which include a case.</p>
 
 
 

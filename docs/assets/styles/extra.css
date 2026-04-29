@@ -496,12 +496,20 @@ article:hover, .card:hover, .content-block:hover {
 }
 
 .action-card-icon {
-  font-size: 3em;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  height: 80px;
+}
+
+.action-card-icon.material-icons {
+  font-size: 64px;
+  color: var(--primary-color);
 }
 
 .action-card h3 {
-  margin-top: 0;
+  margin-top: 1em;
   margin-bottom: 0;
   font-size: 1.4em;
 }
@@ -552,6 +560,15 @@ article:hover, .card:hover, .content-block:hover {
   margin-top: 0;
   color: var(--primary-color);
   font-size: 1.2em;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.info-card-icon.material-icons {
+  font-size: 24px;
+  color: var(--primary-color);
+  flex-shrink: 0;
 }
 
 .info-card ul {

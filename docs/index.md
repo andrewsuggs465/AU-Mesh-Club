@@ -1,67 +1,24 @@
 # Auburn University Mesh Club
 <div class="hero">
 <p>
-A student-led organization exploring LoRa, mesh networking, SDR, and project-based learning at Auburn University.
+A student-led organization focused on mesh networks, wireless and embedded systems, and related technologies within the Auburn University Electrical and Computer Engineering College.
 </p>
 </div>
 
 <div class="action-cards">
 
 <div class="action-card">
-<span class="action-card-icon">📖</span>
+<span class="action-card-icon material-icons">menu_book</span>
 <h3>Getting Started</h3>
-<p>Learn the fundamentals of Meshtastic and get up to speed</p>
+<p>Dive into our extensive collection of documentation!</p>
 <a href="starting-guide">Read Guide</a>
 </div>
 
 <div class="action-card">
-<span class="action-card-icon">📻</span>
-<h3>Selection Guide</h3>
-<p>Choose your build!</p>
-<a href="boards">Read Guide</a>
-</div>
-
-<div class="action-card">
-<span class="action-card-icon">💬</span>
-<h3>Join Our Discord</h3>
-<p>Connect with club members and stay updated</p>
-<a href="https://discord.com/invite/PmmSCSw7Dn">Join Now</a>
-</div>
-
-<div class="action-card">
-<span class="action-card-icon">📋</span>
+<span class="action-card-icon material-icons">assignment</span>
 <h3>Join the Club</h3>
 <p>Become part of our growing community</p>
 <a href="join">Join Us</a>
-</div>
-
-</div>
-
-<div class="section">
-
-<h1>About the Club</h1>
-<p>
-We are an interdisciplinary student organization dedicated to bringing mesh networking technology to Auburn University students. Whether you're in electrical engineering, computer science, mechanical engineering—or any major—we welcome your curiosity and passion for learning.
-</p>
-<h1>Our Members</h1>
-
-<div class="info-grid">
-<div class="info-card">
-<h4>🔌 ECE</h4>
-<p>Electrical and Computer Engineering students driving our hardware initiatives</p>
-</div>
-<div class="info-card">
-<h4>💻 CS</h4>
-<p>Computer and Software Engineering experts building our software stack</p>
-</div>
-<div class="info-card">
-<h4>⚙️ ME</h4>
-<p>Mechanical Engineering talent supporting our mechanical designs</p>
-</div>
-<div class="info-card">
-<h4>🌟 All Majors</h4>
-<p>Non-engineering students and all experience levels are welcome</p>
-</div>
 </div>
 
 </div>
@@ -72,7 +29,7 @@ We are an interdisciplinary student organization dedicated to bringing mesh netw
 
 <div class="info-grid">
 <div class="info-card">
-<h4>📚 Monthly Meetings</h4>
+<h4><span class="info-card-icon material-icons">library_books</span> Monthly Meetings</h4>
 <ul>
 <li>Lessons on emerging technologies</li>
 <li>Project discussions and planning</li>
@@ -80,7 +37,7 @@ We are an interdisciplinary student organization dedicated to bringing mesh netw
 </ul>
 </div>
 <div class="info-card">
-<h4>🛠️ Workshops</h4>
+<h4><span class="info-card-icon material-icons">build</span> Workshops</h4>
 <ul>
 <li>Soldering and PCB assembly</li>
 <li>3D printing fundamentals</li>
@@ -88,7 +45,7 @@ We are an interdisciplinary student organization dedicated to bringing mesh netw
 </ul>
 </div>
 <div class="info-card">
-<h4>🌐 Field Deployment</h4>
+<h4><span class="info-card-icon material-icons">public</span> Field Deployment</h4>
 <ul>
 <li>Deploying nodes in the field</li>
 <li>System design and testing</li>
@@ -96,7 +53,7 @@ We are an interdisciplinary student organization dedicated to bringing mesh netw
 </ul>
 </div>
 <div class="info-card">
-<h4>📢 Community Outreach</h4>
+<h4><span class="info-card-icon material-icons">campaign</span> Community Outreach</h4>
 <ul>
 <li>Inspiring other students</li>
 <li>Public demonstrations</li>
@@ -113,19 +70,19 @@ We are an interdisciplinary student organization dedicated to bringing mesh netw
 
 <div class="info-grid">
 <div class="info-card">
-<h4>🎓 Student Projects</h4>
+<h4><span class="info-card-icon material-icons">school</span> Student Projects</h4>
 <p>Support independent member-driven projects and learning</p>
 </div>
 <div class="info-card">
-<h4>🔬 Research</h4>
+<h4><span class="info-card-icon material-icons">science</span> Research</h4>
 <p>Collaborate with faculty on mesh networking research</p>
 </div>
 <div class="info-card">
-<h4>🤝 Partnerships</h4>
+<h4><span class="info-card-icon material-icons">handshake</span> Partnerships</h4>
 <p>Cross-club technical partnerships with other organizations</p>
 </div>
 <div class="info-card">
-<h4>📡 Community</h4>
+<h4><span class="info-card-icon material-icons">satellite</span> Community</h4>
 <p>Build a regional, community-supported mesh network</p>
 </div>
 </div>
