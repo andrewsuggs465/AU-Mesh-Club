@@ -33,6 +33,11 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
+      - name: Add CNAME for custom domain
+        run: |
+          mkdir -p site
+          echo "aumesh.club" > site/CNAME
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
